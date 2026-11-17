@@ -148,6 +148,19 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
 .note-methode{background:#F0F4EB;border:1px solid #C8D8C5;border-radius:10px;padding:.9rem 1rem;font-size:.94rem;color:#344D3A}
 .chap-num{display:inline-block;color:#688373;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .4rem}
 .note-lecture{font-size:.9rem;color:var(--texte2);margin-top:-.1rem}
+.reflexion{background:#FFFDF7;border:1px solid #D9D9C6;border-left:4px solid #91A48B;border-radius:10px;padding:1rem 1.2rem;margin:1.2rem 0}
+.reflexion h4{margin:0 0 .45rem;color:var(--encre)}
+.reflexion p{margin:.35rem 0 .65rem}
+.reflexion details{background:#F8FAF5;border-color:#DCE3D9;margin:.7rem 0 0}
+.reflexion details p:last-child{margin-bottom:.15rem}
+.reflexion-phase{margin-top:1rem}
+.citation-cas{border-left:3px solid #8BA88F;padding:.5rem .9rem;margin:.7rem 0 1rem;background:#FAFCF8;font-style:italic}
+.consigne-ouverte{font-size:.92rem;color:var(--texte2);margin:.5rem 0 .8rem}
+.entree-reflexion{margin:.9rem 0}
+.entree-reflexion label{display:block;font-weight:650;color:var(--encre);margin-bottom:.4rem}
+.entree-reflexion textarea{width:100%;min-height:108px;resize:vertical;background:#fff;color:var(--texte);font:inherit;border:1px solid #B8C9B8;border-radius:10px;padding:.7rem .85rem;line-height:1.5}
+.entree-reflexion textarea:focus-visible{outline:3px solid #8FAE96;outline-offset:1px}
+.note-privee{font-size:.88rem;color:var(--texte2)}
 @media (max-width:860px){
   .mise{grid-template-columns:1fr}
   nav.menu{position:static;height:auto;padding:1rem 1rem .8rem}
@@ -220,11 +233,17 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
       <a class="action" href="#cloture">Consulter l'aide-mémoire</a>
     </div>
   </div>
-  <p class="note-lecture">À parcourir à votre rythme · Activités avec rétroactions immédiates · Fonctionne aussi hors connexion</p>
+  <p class="note-lecture">Repérez les activités ✎ : prenez position avant d'afficher les rétroactions ou les pistes d'analyse. Le guide fonctionne aussi hors connexion.</p>
   <div class="parcours" aria-label="Trois entrées dans le guide">
     <a href="#fondements"><strong>Je veux comprendre</strong><span>Fondements théoriques et distinction entre les objets d'apprentissage.</span></a>
     <a href="#quand"><strong>Je dois choisir et planifier</strong><span>Pertinence du modèle, phases, rôles de l'enseignant et activité de l'élève.</span></a>
     <a href="#evaluer"><strong>Je veux observer les apprentissages</strong><span>Critères de réussite, manifestations observables et régulation.</span></a>
+  </div>
+
+  <div class="activite" id="act-diagnostic">
+    <div class="tete"><span aria-hidden="true">✎</span> Avant de commencer : votre représentation initiale</div>
+    <p class="consigne">Sans consulter la suite, quelle proposition distingue le mieux l'enseignement explicite d'un cours simplement magistral? Vous pourrez revenir à cette question à la fin.</p>
+    <div data-quiz="diagnostic"></div>
   </div>
 
   <div class="carte">
@@ -336,6 +355,17 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
   <div class="encadre prudence">
     <div class="tete">Une nuance importante</div>
     Hmelo-Silver, Duncan et Chinn (2007) répondent que l'apprentissage par problèmes et l'investigation bien conçus ne relèvent pas du guidage minimal : ils sont fortement étayés. L'opposition pertinente est donc entre un guidage absent et un guidage présent, et non entre l'enseignement explicite et les autres modèles.
+  </div>
+
+  <div class="activite" id="act-theories">
+    <div class="tete"><span aria-hidden="true">✎</span> Relier les fondements plutôt que les réciter</div>
+    <div data-quiz="theories"></div>
+    <div class="reflexion">
+      <h4>Question pour aller plus loin</h4>
+      <p>Si le guidage aide les novices, pourquoi un soutien aussi détaillé peut-il devenir contre-productif chez des élèves déjà compétents?</p>
+      <p class="consigne-ouverte">Formulez votre explication avant d'ouvrir les pistes.</p>
+      <details><summary>Explorer des pistes d'analyse</summary><p>Les élèves expérimentés ont construit des schémas qui leur permettent de traiter la tâche avec moins d'effort. Un guidage trop détaillé peut alors imposer des opérations redondantes et solliciter inutilement leur attention. Il faut donc <strong>ajuster</strong> le guidage au niveau d'expertise, et non l'appliquer uniformément.</p></details>
+    </div>
   </div>
 
   <h3>Le triangle pédagogique de Houssaye à travers les phases</h3>
@@ -485,8 +515,24 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
 
   <div class="activite" id="act-familles">
     <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : de quelle famille s'agit-il?</div>
-    <p class="consigne">Pour chaque objet d'apprentissage, choisissez la famille qui convient. Une rétroaction s'affiche après chaque choix.</p>
+    <p class="consigne">Pour cinq objets d'apprentissage, choisissez la famille qui convient. Une rétroaction s'affiche après chaque choix.</p>
     <div data-quiz="familles"></div>
+  </div>
+  <div class="activite" id="act-modelages">
+    <div class="tete"><span aria-hidden="true">✎</span> Même modèle, mais même modelage?</div>
+    <p class="consigne">Voici trois extraits de pensée à voix haute. Après chaque extrait, repérez <strong>ce que l'enseignant cherche à rendre visible</strong> : les actions à accomplir, le choix d'une stratégie ou les liens qui fondent une explication.</p>
+    <div data-quiz="modelages"></div>
+    <div class="reflexion">
+      <h4>Et à quoi reconnaîtrait-on l'autonomie?</h4>
+      <p>Pour chacun des trois objets, qu'est-ce que l'élève devrait pouvoir faire sans que l'enseignant lui indique comment procéder?</p>
+      <details><summary>Comparer avec des manifestations possibles</summary>
+        <ul>
+          <li><strong>Procédure :</strong> simplifier une nouvelle fraction en justifiant les opérations et en vérifiant le résultat.</li>
+          <li><strong>Stratégie :</strong> reconnaître un blocage de compréhension, choisir des indices pertinents et vérifier le sens inféré, au besoin avec une ressource fiable.</li>
+          <li><strong>Raisonnement :</strong> sélectionner des données, formuler une explication et expliciter le lien entre les deux, sans questions inductrices.</li>
+        </ul>
+      </details>
+    </div>
   </div>
   <a class="haut" href="#contenu">Retour en haut</a>
 </section>
@@ -528,6 +574,17 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
     <p class="consigne">Pour chaque scénario, indiquez si l'enseignement explicite est le choix principal, si un autre modèle convient mieux, ou s'il faut combiner les deux.</p>
     <div data-quiz="quand"></div>
   </div>
+  <div class="activite" id="act-decision">
+    <div class="tete"><span aria-hidden="true">✎</span> Décider ce qu'il faut réellement enseigner</div>
+    <p>Une enseignante veut amener ses élèves à justifier leurs conclusions scientifiques. Elle prévoit de modéliser une démarche en cinq étapes que les élèves reproduiront ensuite.</p>
+    <p class="consigne"><strong>Quelle décision didactique améliorerait le plus ce modelage?</strong></p>
+    <div data-quiz="decision"></div>
+    <div class="reflexion">
+      <h4>Quel risque faut-il éviter?</h4>
+      <p>Pourquoi le fait de suivre correctement les cinq étapes ne garantit-il pas que l'élève apprend à raisonner scientifiquement?</p>
+      <details><summary>Explorer des pistes d'analyse</summary><p>Une succession d'actions peut être reproduite comme une « recette ». L'élève peut remplir son tableau et sa conclusion sans établir de relation justifiée entre les données et son affirmation. Le modelage doit donc rendre visibles les <strong>opérations intellectuelles</strong> : sélectionner des indices, les interpréter, discuter leur portée et justifier une conclusion.</p></details>
+    </div>
+  </div>
   <a class="haut" href="#contenu">Retour en haut</a>
 </section>
 
@@ -546,6 +603,21 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
     <ol class="ordre" id="liste-ordre" style="padding-left:0;list-style:none"></ol>
     <button class="btn plein" id="verif-ordre">Vérifier l'ordre</button>
     <div id="retro-ordre" aria-live="polite"></div>
+  </div>
+
+  <div class="activite" id="act-bascule">
+    <div class="tete"><span aria-hidden="true">✎</span> Pratique guidée ou deuxième modelage?</div>
+    <p>Des élèves doivent simplifier une fraction. L'enseignante demande ce qu'il faut faire. Devant leur hésitation, elle reprend elle-même au tableau les cinq étapes, puis demande de reproduire la démarche avec une autre fraction.</p>
+    <p class="consigne"><strong>À quel moment la responsabilité de la tâche repasse-t-elle à l'enseignante?</strong></p>
+    <div data-quiz="bascule"></div>
+    <div class="reflexion">
+      <h4>Quelles relances préserveraient l'activité cognitive des élèves?</h4>
+      <p class="consigne-ouverte">Trouvez deux interventions possibles avant de dévoiler des exemples.</p>
+      <details><summary>Comparer avec des relances possibles</summary>
+        <ul><li>« Quelle étape de notre aide-mémoire pourrait vous aider maintenant? »</li><li>« Qu'avez-vous déjà trouvé? Qu'est-ce qui reste à déterminer? »</li><li>« Pourquoi pouvez-vous diviser ces deux nombres par le même diviseur? »</li></ul>
+        <p>Ces relances ne constituent pas une règle absolue : si plusieurs élèves ne disposent pas des préalables nécessaires, <strong>un nouveau modelage ciblé peut être justifié</strong>. L'enjeu est de décider à partir des traces de compréhension.</p>
+      </details>
+    </div>
   </div>
 
   <div class="activite" id="act-relance">
@@ -651,6 +723,20 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
     <button class="btn plein" id="verif-align">Vérifier mes associations</button>
     <div id="retro-align" aria-live="polite"></div>
   </div>
+  <div class="activite" id="act-preuve">
+    <div class="tete"><span aria-hidden="true">✎</span> Peut-on conclure que l'élève a appris?</div>
+    <p>Un élève obtient correctement <strong>1/5</strong> à partir de <strong>6/30</strong>. L'enseignante en conclut qu'il maîtrise la simplification des fractions.</p>
+    <p class="consigne">Cette seule réponse suffit-elle pour porter ce jugement?</p>
+    <div data-quiz="preuve"></div>
+    <div class="reflexion">
+      <h4>Quelles manifestations supplémentaires observer?</h4>
+      <p class="consigne-ouverte">Proposez au moins deux manifestations avant de comparer vos idées.</p>
+      <details><summary>Explorer des pistes d'observation</summary>
+        <ul><li>L'élève explique pourquoi les deux termes doivent être divisés par le même nombre.</li><li>Il vérifie si la fraction obtenue est irréductible.</li><li>Il réinvestit la procédure sur une autre fraction, sans que les étapes soient données.</li></ul>
+        <p>Une réponse juste est une <strong>trace utile</strong>, mais ne suffit pas toujours à inférer une maîtrise stable et transférable.</p>
+      </details>
+    </div>
+  </div>
   <a class="haut" href="#contenu">Retour en haut</a>
 </section>
 
@@ -667,6 +753,19 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
   <div class="carte">
     <h3 style="margin-top:0">Question de retour réflexif</h3>
     <p>Dans votre séquence, à quel moment le triangle a-t-il le plus de risque de « refuser de tourner »? Que prévoyez-vous pour laisser réellement la place à l'élève?</p>
+  </div>
+
+  <div class="activite" id="act-transfert">
+    <div class="tete"><span aria-hidden="true">✎</span> À transférer dans votre propre enseignement</div>
+    <p>Choisissez un apprentissage que vous devez enseigner. En quelques phrases, prenez quatre décisions. Il n'y a pas de correction automatique : la qualité de votre justification est l'essentiel.</p>
+    <div class="entree-reflexion"><label for="transfert-1">1. Quel objet d'apprentissage visez-vous précisément : une procédure, une stratégie ou une façon de raisonner? Pourquoi?</label><textarea id="transfert-1" placeholder="Nommez l'apprentissage et justifiez sa nature…"></textarea></div>
+    <div class="entree-reflexion"><label for="transfert-2">2. Pourquoi l'enseignement explicite serait-il pertinent ici, plutôt qu'un autre modèle ou une combinaison de modèles?</label><textarea id="transfert-2" placeholder="Appuyez votre décision sur l'objet et sur les élèves…"></textarea></div>
+    <div class="entree-reflexion"><label for="transfert-3">3. Quelles opérations intellectuelles rendriez-vous visibles pendant le modelage?</label><textarea id="transfert-3" placeholder="Précisez ce que vous penseriez à voix haute…"></textarea></div>
+    <div class="entree-reflexion"><label for="transfert-4">4. Quelles manifestations observables vous permettraient de décider que les élèves sont prêts pour la pratique autonome?</label><textarea id="transfert-4" placeholder="Indiquez les critères et les traces que vous examineriez…"></textarea></div>
+    <button class="btn plein" type="button" id="telecharger-reflexion">Télécharger mes réponses (.txt)</button>
+    <p class="note-privee">Vos réponses restent dans cette page : elles ne sont ni transmises ni enregistrées sur un serveur. Téléchargez-les avant de fermer ou de recharger l'onglet.</p>
+    <div id="message-reflexion" aria-live="polite"></div>
+    <div class="reflexion"><h4>Retour sur votre représentation initiale</h4><p>Votre définition de l'enseignement explicite a-t-elle changé depuis la première question du guide? Qu'ajouteriez-vous désormais pour rendre compte de l'activité cognitive de l'élève?</p><a href="#act-diagnostic">Revoir ma réponse de départ</a></div>
   </div>
 
   <h3>Références</h3>
@@ -821,16 +920,30 @@ var gS=document.getElementById("sommets");
 
 /* ---------- Quiz à choix ---------- */
 var QUIZ={
+  diagnostic:{items:[
+    {q:"Qu'est-ce qui distingue le mieux l'enseignement explicite d'un cours simplement magistral?",
+     options:["L'enseignant explique clairement les notions.","L'enseignant montre comment faire, puis les élèves reproduisent.","L'enseignant rend visibles les opérations intellectuelles et accompagne progressivement les élèves vers l'autonomie.","L'enseignant transmet les connaissances avant de proposer des exercices."],ok:2,
+     fb:["La clarté de l'exposé est importante, mais ne suffit pas à caractériser l'enseignement explicite : il faut regarder l'activité des élèves et la régulation.","Le modelage et la pratique sont présents, mais il manque l'explicitation des choix et des raisonnements ainsi que le transfert graduel de responsabilité.","C'est la proposition la plus complète : le modelage rend la pensée accessible, la pratique guidée étaye et l'évaluation formative règle le passage vers l'autonomie.","Cette description peut correspondre à un enseignement magistral suivi d'exercices. Elle ne dit rien des opérations intellectuelles modélisées ni de la pratique guidée."]}
+  ]},
+  theories:{items:[
+    {q:"Pourquoi l'enseignement explicite ne peut-il pas être considéré comme un modèle strictement béhavioriste?",
+     options:["Il mobilise aussi la psychologie cognitive, la métacognition et les travaux sur l'étayage.","Il exclut toute répétition et tout renforcement.","Il repose essentiellement sur les interactions entre élèves."],ok:0,
+     fb:["Exact : l'explicitation des processus, l'attention à la mémoire de travail, la pratique guidée et l'autonomie progressive dépassent une lecture strictement comportementale.","La pratique répétée et la rétroaction demeurent utiles. Ce sont leurs fonctions et leur articulation avec la compréhension qui importent.","Les interactions peuvent soutenir l'apprentissage, mais elles ne constituent pas à elles seules le principe central du modèle."]}
+  ]},
   familles:{options:["Procédure","Stratégie cognitive","Façon de raisonner"],items:[
     {q:"Simplifier une fraction en divisant le numérateur et le dénominateur par un diviseur commun.",ok:0,f:"Une suite d'actions ordonnées qui mène à un résultat prévisible : c'est une procédure. On n'oublie pas d'en enseigner le pourquoi."},
     {q:"Inférer le sens d'un mot inconnu à l'aide des indices du texte.",ok:1,f:"L'élève choisit ce moyen quand il bloque sur un mot, et rien ne garantit le résultat : c'est une stratégie cognitive. Le quand et le pourquoi sont au cœur de son enseignement."},
     {q:"Justifier une explication à l'aide des données d'une expérience.",ok:2,f:"On relie une affirmation à des preuves selon les critères de validité de la science : c'est une façon de raisonner."},
-    {q:"Calculer la fraction d'une population en plaçant la partie au numérateur et le tout au dénominateur.",ok:0,f:"Les étapes sont fixes et le résultat est prévisible : c'est une procédure."},
     {q:"Se faire une image mentale pour mieux comprendre un passage difficile.",ok:1,f:"C'est un moyen choisi par l'élève pour atteindre un but de compréhension, selon le contexte : une stratégie cognitive."},
-    {q:"Distinguer une hypothèse d'une conclusion.",ok:2,f:"C'est le statut de l'énoncé, et donc sa validité, qui est en jeu : une façon de raisonner propre à la science."},
-    {q:"Lire une température sur un thermomètre.",ok:0,f:"Une suite d'actions précises et un résultat attendu : une procédure, souvent mobilisée au service d'un raisonnement."},
-    {q:"Décider de relire un paragraphe quand on perd le fil.",ok:1,f:"La décision dépend de l'autorégulation de l'élève (je ne comprends plus, donc je relis) : une stratégie cognitive."},
     {q:"Comparer deux situations en ne changeant qu'un seul facteur.",ok:2,f:"C'est le principe du contrôle des variables : sans lui, on ne peut pas attribuer un effet à une cause. Une façon de raisonner."}
+  ]},
+  modelages:{options:["Les étapes de la procédure et leur justification","Le choix et le contrôle d'une stratégie","Le lien entre les données et une explication"],items:[
+    {q:"« Je cherche un diviseur commun. Je peux diviser 6 et 30 par 6 parce que ce nombre divise les deux termes. » Que rend-on surtout visible?",ok:0,
+     fb:["Le modelage explicite une opération ordonnée et le pourquoi mathématique qui la rend valide.","Ici, on décrit avant tout une procédure de calcul. Une stratégie impliquerait davantage une décision sur le moment et la pertinence de son usage.","Il s'agit surtout de justifier une opération mathématique, pas de construire une explication à partir de données empiriques."]},
+    {q:"« Je ne comprends pas ce mot. Je cherche des indices autour, puis je vérifie si mon hypothèse tient. » Que rend-on surtout visible?",ok:1,
+     fb:["On ne suit pas uniquement des étapes fixes : il faut reconnaître le moment où la stratégie devient utile et en contrôler l'efficacité.","Le besoin, le choix de la stratégie et la vérification de son efficacité sont rendus visibles.","Une inférence suppose des indices, mais l'objet central est ici la stratégie de compréhension et son autorégulation."]},
+    {q:"« Le glaçon près de la fenêtre a fondu plus vite. Cette observation suffit-elle à montrer pourquoi? Que faudrait-il comparer? » Que rend-on surtout visible?",ok:2,
+     fb:["Suivre une procédure de mesure peut aider, mais la question porte surtout sur la portée d'une observation et la justification d'une explication.","Il y a une vérification de pensée, mais l'apprentissage visé est surtout de construire une explication scientifiquement justifiable.","Le modelage met en évidence la relation entre observation, hypothèse, données et conclusion, y compris les limites de l'inférence."]}
   ]},
   quand:{options:["Enseignement explicite","Un autre modèle","Combiner les deux"],items:[
     {q:"Des élèves rencontrent pour la première fois la simplification des fractions.",ok:0,f:"Élèves novices, procédure avec des étapes peu découvrables : l'enseignement explicite est tout indiqué."},
@@ -839,6 +952,21 @@ var QUIZ={
     {q:"Une classe lit un album contenant des mots peu familiers, notamment en inuktitut, et plusieurs élèves peinent à utiliser les indices du texte.",ok:0,f:"Le modelage peut rendre visible une stratégie d'inférence, avec pratique guidée et options CUA. Pour les mots en inuktitut, on vérifie toutefois le sens à l'aide d'un lexique fiable : les indices ne suffisent pas toujours."},
     {q:"L'objectif est de développer l'écoute et le dialogue autour d'un enjeu qui touche la communauté.",ok:1,f:"L'objectif est d'abord relationnel et citoyen : un modèle coopératif ou expérientiel convient mieux. Certaines habiletés (reformuler, attendre son tour) pourraient tout de même faire l'objet d'une courte mini-leçon."},
     {q:"Des élèves de 6e année réalisent un projet de recherche, et plusieurs ne savent pas comment prendre des notes à partir d'une source.",ok:2,f:"On garde le projet, et on insère une mini-leçon explicite sur la prise de notes au moment où les élèves en ont besoin."}
+  ]},
+  decision:{items:[
+    {q:"Que devrait-elle surtout rendre visible pendant le modelage?",
+     options:["Les cinq étapes de la démarche à reproduire dans le bon ordre.","Les gestes nécessaires pour manipuler le matériel et remplir le tableau.","Le passage des observations aux données pertinentes, puis à une conclusion justifiée.","Le modèle de phrase à recopier pour écrire une conclusion."],ok:2,
+     fb:["Des étapes peuvent soutenir l'organisation, mais leur reproduction ne garantit pas le raisonnement visé.","Ces gestes sont utiles au besoin, mais ils relèvent plutôt de procédures instrumentales.","C'est ce passage qui constitue l'objet du modelage : montrer comment on sélectionne, relie et discute des données pour justifier une conclusion.","Un cadre de phrase peut étayer l'expression, mais le critère central reste la qualité du lien entre l'affirmation et les données."]}
+  ]},
+  bascule:{items:[
+    {q:"Quel moment montre le plus clairement que l'enseignante reprend le travail intellectuel à la place des élèves?",
+     options:["Lorsqu'elle demande ce qu'ils doivent faire.","Lorsqu'elle reprend elle-même les cinq étapes au tableau sans les faire mobiliser par les élèves.","Lorsqu'elle propose une nouvelle fraction pour s'exercer."],ok:1,
+     fb:["Cette question initiale peut au contraire susciter une mobilisation des connaissances, si elle est accompagnée d'un étayage adapté.","C'est le basculement. Les élèves redeviennent surtout observateurs. Un modelage ciblé peut toutefois être pertinent si les observations montrent qu'ils ne disposent pas encore des préalables.","Changer d'exemple peut convenir en pratique guidée ; c'est l'accompagnement de la démarche par les élèves qui détermine le degré d'autonomie."]}
+  ]},
+  preuve:{items:[
+    {q:"Quelle analyse est la plus défendable à partir de cette seule réponse juste?",
+     options:["La maîtrise est démontrée : le résultat est correct.","La réponse est une trace utile, mais il faut encore examiner les opérations, leur justification et le réinvestissement.","On ne peut rien conclure tant qu'un examen sommatif n'a pas eu lieu."],ok:1,
+     fb:["La bonne réponse ne permet pas à elle seule de savoir si la procédure est comprise, copiée ou obtenue par essais.","On distingue la trace de réussite ponctuelle des manifestations nécessaires à un jugement plus solide sur l'apprentissage.","L'évaluation formative peut fournir des éléments de jugement très utiles, sans attendre un examen sommatif."]}
   ]},
   relance:{items:[
     {q:"Un élève s'exclame : « Le glaçon disparaît! »",options:["« Non, il ne disparaît pas, il fond. »","« Exactement, bravo! »","« Est-ce qu'il disparaît vraiment? Qu'est-ce qu'on voit dans l'assiette maintenant? »","« On verra ça plus tard. »"],ok:2,
@@ -910,12 +1038,25 @@ var PHASES=[
   vig:["Des retours où seuls quelques élèves répondent : que fait-on de ceux qui se taisent?","Partir des réponses des élèves plutôt que de fournir des exemples de réponses tout faits."],
   cua:"Proposer une autoévaluation illustrée (pictogrammes, échelle visuelle) et plusieurs façons de partager : dire, montrer, écrire."}
 ];
+var QUESTIONS_PHASES=[
+  {q:"Une mise en situation qui active les connaissances antérieures suffit-elle à justifier le nouvel apprentissage?",
+   p:"Non. Elle doit aussi rendre perceptible le besoin de l'objet à apprendre. Si la tâche porte sur la simplification des fractions, les élèves devraient comprendre à quoi sert une écriture équivalente plus simple avant que l'enseignante en modélise la procédure."},
+  {q:"Si l'enseignant écrit seulement « 6/30 = 1/5 », quelles opérations intellectuelles restent invisibles?",
+   p:"La recherche d'un diviseur commun, la justification de la division des deux termes par un même nombre et la vérification que la fraction obtenue est irréductible. Montrer le résultat n'est pas encore modeler la démarche de pensée."},
+  {q:"Comment soutenir un élève qui bloque sans refaire le travail à sa place?",
+   p:"Repartir de ce qu'il a déjà compris, cibler l'étape qui pose problème, renvoyer à un repère accessible et demander une justification. L'étayage reste ajustable : un nouveau modelage ciblé est envisageable si les traces montrent que les préalables manquent réellement."},
+  {q:"Une fiche qui indique successivement « observe, compare, conclus » permet-elle de vérifier l'autonomie du raisonnement?",
+   p:"Pas entièrement : elle fournit déjà la structure intellectuelle de la réponse. Une nouvelle situation avec une consigne moins inductrice peut mieux révéler si l'élève choisit lui-même les données et justifie son explication. Les aides d'accessibilité peuvent néanmoins rester disponibles."},
+  {q:"Quelle différence entre demander « Qu'avons-nous fait? » et « Qu'avons-nous appris et quand pourrons-nous le réutiliser? »?",
+   p:"La première question peut se limiter au récit des tâches. La seconde vise l'explicitation de l'apprentissage, les critères de réussite, les difficultés surmontées et les conditions de réinvestissement. L'enseignant aide ensuite à stabiliser le savoir avec les élèves."}
+];
 var ong=document.getElementById("onglets-phases"),pan=document.getElementById("panneaux-phases");
 function liste_(a){return "<ul>"+a.map(function(x){return "<li>"+x+"</li>";}).join("")+"</ul>";}
 PHASES.forEach(function(ph,i){
   var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.id="tab-"+i;b.setAttribute("aria-controls","pan-"+i);b.setAttribute("aria-selected",i===0?"true":"false");b.tabIndex=i===0?0:-1;b.textContent=(i+1)+". "+ph.n;ong.appendChild(b);
   var p=document.createElement("div");p.className="panneau";p.id="pan-"+i;p.setAttribute("role","tabpanel");p.setAttribute("aria-labelledby","tab-"+i);p.tabIndex=0;if(i!==0)p.hidden=true;
   p.innerHTML="<p style='margin-top:0;color:var(--texte2)'><strong>Triangle de Houssaye :</strong> "+ph.rel+"</p>"+
+   "<div class='reflexion reflexion-phase'><h4>Une question pour analyser cette phase</h4><p>"+QUESTIONS_PHASES[i].q+"</p><p class='consigne-ouverte'>Prenez position avant d'ouvrir les pistes.</p><details><summary>Explorer des pistes d'analyse</summary><p>"+QUESTIONS_PHASES[i].p+"</p></details></div>"+
    "<div class='roles'><div class='role'><h4>Enseignant : volet didactique</h4>"+liste_(ph.did)+"</div><div class='role'><h4>Enseignant : volet pédagogique</h4>"+liste_(ph.ped)+"</div><div class='role'><h4>Élève : point de vue cognitif</h4>"+liste_(ph.cog)+"</div></div>"+
    "<h4>Selon la famille</h4><div class='grille3'><div class='fam p'><span class='etiq p'>Procédure</span><p style='margin-bottom:0'>"+ph.fam[0]+"</p></div><div class='fam s'><span class='etiq s'>Stratégie</span><p style='margin-bottom:0'>"+ph.fam[1]+"</p></div><div class='fam r'><span class='etiq r'>Raisonnement</span><p style='margin-bottom:0'>"+ph.fam[2]+"</p></div></div>"+
    "<div class='encadre vigil'><div class='tete'><span aria-hidden='true'>!</span> Ce qu'on a observé en animation</div>"+liste_(ph.vig)+"</div>"+
@@ -1016,6 +1157,29 @@ COCHE.forEach(function(c,i){
 });
 function maj(){var n=lc.querySelectorAll("input:checked").length;cc.textContent=n+" élément(s) sur "+COCHE.length+" sont prévus dans ma séquence.";}
 lc.addEventListener("change",maj);maj();
+
+/* ---------- Export local de la réflexion de transfert ---------- */
+document.getElementById("telecharger-reflexion").addEventListener("click",function(){
+  var champs=Array.prototype.slice.call(document.querySelectorAll("#act-transfert .entree-reflexion"));
+  var reponses=champs.map(function(c){return {
+    question:c.querySelector("label").textContent.trim(),
+    texte:c.querySelector("textarea").value.trim()
+  };});
+  var message=document.getElementById("message-reflexion");
+  if(!reponses.some(function(x){return x.texte.length>0;})){
+    message.innerHTML="<p class='erreur'>Rédigez au moins une réponse avant de télécharger votre réflexion.</p>";
+    champs[0].querySelector("textarea").focus();
+    return;
+  }
+  var contenu="3PDG260 — Mes décisions en enseignement explicite\n\n"+
+    reponses.map(function(x){return x.question+"\n"+(x.texte||"[À compléter]");}).join("\n\n")+"\n";
+  var fichier=new Blob(["\uFEFF"+contenu],{type:"text/plain;charset=utf-8"});
+  var url=URL.createObjectURL(fichier);
+  var lien=document.createElement("a");lien.href=url;lien.download="mes_decisions_enseignement_explicite.txt";
+  document.body.appendChild(lien);lien.click();lien.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  message.innerHTML="<div class='retro ok'><span class='marq'>✓ </span>Votre réflexion a été préparée pour le téléchargement. Conservez ce fichier pour la retravailler.</div>";
+});
 
 /* ---------- Menu actif ---------- */
 var liensMenu=document.querySelectorAll("nav.menu a");

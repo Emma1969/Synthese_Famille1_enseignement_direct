@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'enseignement explicite — synthèse interactive | 3PDG260</title>
+<meta name="description" content="Une synthèse interactive de l'enseignement explicite : fondements, objets d'apprentissage, phases, choix pédagogiques et évaluation formative. Cours 3PDG260.">
+<meta name="theme-color" content="#385848">
+<style>
+:root{
+  --fond:#F6F7F2; --carte:#FFFFFF; --texte:#25342B; --texte2:#4E6254; --bordure:#DCE3D9;
+  --encre:#385848;
+  --proc:#406D59; --proc-f:#ECF3EB;
+  --strat:#80634A; --strat-f:#F4EFE7;
+  --rais:#426F68; --rais-f:#EAF3EF;
+  --inter:#526F55; --inter-f:#EFF3E9;
+  --ok:#34694B; --nok:#91483B;
+  --dr:#615A44; --dr-f:#F3F0E6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--fond);color:var(--texte);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:17px;line-height:1.65}
+a{color:var(--encre)}
+:focus-visible{outline:3px solid var(--inter);outline-offset:2px}
+.saut{position:absolute;left:-999px;top:0;background:var(--encre);color:#fff;padding:.6rem 1rem;z-index:10}
+.saut:focus{left:1rem}
+.mise{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav.menu{background:linear-gradient(165deg,#385848 0%,#28483A 100%);color:#fff;padding:1.6rem 1rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav.menu .titre-guide{font-size:.85rem;letter-spacing:.04em;opacity:.85;margin:0 0 .3rem}
+nav.menu h2{font-size:1.15rem;margin:0 0 1.2rem;color:#fff;line-height:1.3}
+nav.menu ol{list-style:none;padding:0;margin:0}
+nav.menu li a{display:block;color:#fff;text-decoration:none;padding:.5rem .7rem;border-radius:8px;font-size:.95rem;border-left:3px solid transparent}
+nav.menu li a:hover{background:rgba(255,255,255,.1)}
+nav.menu li a.actif{background:rgba(255,255,255,.16);border-left-color:#fff}
+nav.menu .legende-menu{margin-top:1.5rem;font-size:.82rem;opacity:.95;border-top:1px solid rgba(255,255,255,.25);padding-top:1rem}
+nav.menu .legende-menu div{display:flex;align-items:center;gap:.5rem;margin:.3rem 0}
+main{padding:2.3rem clamp(1rem,4vw,3.5rem) 4rem;max-width:1100px;width:100%;min-width:0}
+section{padding-top:1.5rem;margin-bottom:3rem;border-bottom:1px solid var(--bordure);scroll-margin-top:1rem}
+section:last-of-type{border-bottom:0}
+h1{font-size:2rem;color:var(--encre);line-height:1.25;margin:.5rem 0 1rem}
+h2{font-size:1.6rem;color:var(--encre);margin:0 0 1rem;line-height:1.3}
+h3{font-size:1.2rem;color:var(--encre);margin:2rem 0 .7rem}
+h4{font-size:1.02rem;margin:1rem 0 .4rem}
+.chapeau{font-size:1.1rem;color:var(--texte2)}
+.carte{background:var(--carte);border:1px solid var(--bordure);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 4px 20px rgba(35,56,44,.035)}
+.grille3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.fam{border-radius:12px;padding:1rem 1.2rem;border:1px solid}
+.fam h4{margin-top:0;display:flex;align-items:center;gap:.5rem}
+.fam.p{background:var(--proc-f);border-color:var(--proc);color:#183450}
+.fam.p h4{color:var(--proc)}
+.fam.s{background:var(--strat-f);border-color:var(--strat);color:#4E2412}
+.fam.s h4{color:var(--strat)}
+.fam.r{background:var(--rais-f);border-color:var(--rais);color:#0E3B40}
+.fam.r h4{color:var(--rais)}
+.etiq{display:inline-block;font-size:.8rem;font-weight:600;padding:.1rem .55rem;border-radius:999px;border:1px solid}
+.etiq.p{color:var(--proc);border-color:var(--proc);background:var(--proc-f)}
+.etiq.s{color:var(--strat);border-color:var(--strat);background:var(--strat-f)}
+.etiq.r{color:var(--rais);border-color:var(--rais);background:var(--rais-f)}
+.encadre{border-left:5px solid;border-radius:0;padding:.9rem 1.2rem;margin:1.2rem 0;background:var(--carte)}
+.encadre .tete{font-weight:600;display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+.encadre.vigil{border-color:var(--nok)}
+.encadre.vigil .tete{color:var(--nok)}
+.encadre.garder{border-color:var(--ok)}
+.encadre.garder .tete{color:var(--ok)}
+.encadre.cua{border-color:var(--encre)}
+.encadre.cua .tete{color:var(--encre)}
+.encadre.dr{border-color:#827456;background:var(--dr-f);color:var(--dr)}
+.encadre.dr .tete{color:var(--dr)}
+.encadre.prudence{border-color:var(--texte2);font-size:.93rem;color:var(--texte2)}
+.activite{background:var(--inter-f);border:1px solid #B5C9B7;border-radius:14px;padding:1.2rem 1.4rem;margin:1.8rem 0}
+.activite>.tete{color:var(--inter);font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+.activite .consigne{margin-top:0}
+table{border-collapse:collapse;width:100%;margin:1rem 0;background:var(--carte);font-size:.95rem}
+caption{text-align:left;font-weight:600;color:var(--encre);padding:.3rem 0 .6rem}
+th,td{border:1px solid var(--bordure);padding:.6rem .7rem;text-align:left;vertical-align:top}
+thead th{background:var(--encre);color:#fff}
+thead th.p{background:var(--proc)} thead th.s{background:var(--strat)} thead th.r{background:var(--rais)}
+tbody th{background:#F2F5EF;font-weight:600}
+.defile{overflow-x:auto}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--carte);border:1px solid var(--inter);color:var(--inter);border-radius:8px;padding:.45rem .9rem;margin:.2rem .3rem .2rem 0}
+.btn:hover{background:#E8EFE7}
+.btn[aria-pressed="true"]{background:var(--inter);color:#fff}
+.btn.plein{background:var(--inter);color:#fff}
+.item{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;margin:.7rem 0}
+.item .enonce{font-weight:600;margin:0 0 .4rem}
+.retro{margin-top:.5rem;padding:.5rem .8rem;border-radius:8px;font-size:.95rem}
+.retro.ok{border:1px solid var(--ok);color:#1E5420;background:#EBF4ED}
+.retro.nok{border:1px solid var(--nok);color:#79392D;background:#FBEEEB}
+.retro .marq{font-weight:700}
+.erreur{color:var(--nok);font-size:.9rem;margin:.3rem 0}
+.onglets{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;border-bottom:2px solid var(--encre)}
+.onglets button{background:var(--carte);border:1px solid var(--bordure);border-bottom:0;border-radius:8px 8px 0 0;padding:.55rem .9rem;color:var(--encre)}
+.onglets button[aria-selected="true"]{background:var(--encre);color:#fff;border-color:var(--encre)}
+.panneau{background:var(--carte);border:1px solid var(--bordure);border-top:0;border-radius:0 0 12px 12px;padding:1.2rem 1.4rem}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}
+.role{border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;background:#FCFDFB}
+.role h4{margin-top:0;font-size:.98rem;color:var(--encre)}
+.role ul{margin:.3rem 0 0;padding-left:1.1rem}
+.carte-concept{background:var(--carte);border:1px solid var(--bordure);border-radius:12px;padding:.6rem}
+.carte-concept>svg{width:100%;height:auto;display:block}
+.noeud{cursor:pointer}
+.noeud rect{transition:stroke-width .15s}
+.noeud:hover rect,.noeud:focus rect{stroke-width:3}
+.noeud:focus{outline:none}
+.noeud.choisi rect{stroke-width:3.5}
+.carte-concept{position:relative}
+#bulle{position:absolute;width:360px;max-height:440px;overflow-y:auto;max-width:calc(100% - 1rem);background:#fff;border:2px solid var(--encre);border-radius:12px;padding:1rem 1.1rem;box-shadow:0 6px 18px rgba(31,42,46,.18);font-size:.93rem;line-height:1.5;z-index:5}
+#bulle[hidden]{display:none}
+#bulle h3{margin:0 2rem .5rem 0;font-size:1.08rem}
+#bulle p{margin:.45rem 0}
+#bulle .fermer{position:absolute;top:.5rem;right:.5rem;border:1px solid var(--bordure);background:#fff;border-radius:6px;width:2rem;height:2rem;color:var(--encre);font-size:1.1rem;line-height:1}
+#bulle .rub{font-weight:700;color:var(--encre)}
+#bulle.dessous{position:static;width:auto;max-width:none;margin-top:.6rem;box-shadow:none}
+.legende{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.88rem;color:var(--texte2);margin:.6rem .4rem}
+.legende span{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap}
+.legende svg{flex-shrink:0}
+.ordre li{display:flex;align-items:center;gap:.5rem;background:var(--carte);border:1px solid var(--bordure);border-radius:8px;padding:.45rem .7rem;margin:.35rem 0}
+.ordre li .nom{flex:1}
+.ordre button{border:1px solid var(--inter);background:#fff;color:var(--inter);border-radius:6px;width:2.2rem;height:2rem}
+.coche label{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0}
+.coche input{width:1.15rem;height:1.15rem;margin-top:.25rem;accent-color:var(--inter)}
+select{font:inherit;padding:.35rem;border-radius:6px;border:1px solid var(--texte2);max-width:100%}
+details{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.6rem 1rem;margin:.8rem 0}
+summary{cursor:pointer;font-weight:600;color:var(--encre)}
+.refs li{margin:.4rem 0;font-size:.93rem}
+.haut{display:inline-block;margin-top:1rem;font-size:.9rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mobile-menu{display:none}
+.progression{height:4px;position:fixed;top:0;left:0;right:0;z-index:30;pointer-events:none;background:transparent}
+.progression span{display:block;height:100%;width:0;background:#8FB99D;transition:width .12s linear}
+.intro-hero{position:relative;background:linear-gradient(138deg,#E6EEE5 0%,#F3F5ED 60%,#FBFCF8 100%);border:1px solid #CEDCCD;border-radius:20px;padding:2rem clamp(1.2rem,3.4vw,2.6rem);overflow:hidden;margin:-.35rem 0 1.5rem}
+.intro-hero::after{content:"";position:absolute;width:235px;height:235px;border:38px solid rgba(111,151,121,.10);border-radius:50%;right:-90px;top:-90px;pointer-events:none}
+.sur-titre{display:inline-flex;align-items:center;gap:.55rem;color:#426451;text-transform:uppercase;letter-spacing:.11em;font-size:.75rem;font-weight:800;margin:0 0 1rem}
+.sur-titre::before{content:"";width:21px;height:2px;background:#759781}
+.intro-hero h1{font-size:clamp(2rem,3.6vw,3.15rem);max-width:780px;margin:0 0 1rem;line-height:1.13;letter-spacing:-.035em}
+.intro-hero .chapeau{font-size:1.08rem;max-width:760px;color:#42594A;margin:0 0 1.4rem}
+.actions-accueil{display:flex;flex-wrap:wrap;gap:.7rem;position:relative;z-index:1}
+.action{display:inline-flex;align-items:center;gap:.6rem;border:1px solid #6F9577;border-radius:9px;padding:.65rem 1rem;text-decoration:none;font-weight:700;font-size:.93rem;line-height:1.35;background:#fff;color:#385848}
+.action.principale{background:#385848;color:#fff;border-color:#385848}
+.action:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(39,70,52,.12)}
+.parcours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.2rem 0 1.8rem}
+.parcours a{display:block;text-decoration:none;color:var(--texte);background:#fff;border:1px solid var(--bordure);border-radius:12px;padding:1rem 1.1rem;min-width:0}
+.parcours a:hover{border-color:#88A892;background:#FBFDF9}
+.parcours strong{display:block;color:var(--encre);font-size:.98rem}
+.parcours span{display:block;font-size:.88rem;color:var(--texte2);line-height:1.5;margin-top:.28rem}
+.note-methode{background:#F0F4EB;border:1px solid #C8D8C5;border-radius:10px;padding:.9rem 1rem;font-size:.94rem;color:#344D3A}
+.chap-num{display:inline-block;color:#688373;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .4rem}
+.note-lecture{font-size:.9rem;color:var(--texte2);margin-top:-.1rem}
+@media (max-width:860px){
+  .mise{grid-template-columns:1fr}
+  nav.menu{position:static;height:auto;padding:1rem 1rem .8rem}
+  nav.menu h2{margin:0;font-size:1rem}
+  nav.menu .titre-guide{margin-bottom:.2rem}
+  .mobile-menu{display:inline-flex;float:right;align-items:center;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:.35rem .7rem;font-size:.9rem}
+  nav.menu ol,nav.menu .legende-menu{display:none}
+  nav.menu.ouvert ol,nav.menu.ouvert .legende-menu{display:block}
+  nav.menu ol{margin-top:1rem}
+  main{padding-top:1.3rem}
+  .parcours{grid-template-columns:1fr}
+  .intro-hero{padding:1.4rem}
+  section{scroll-margin-top:1rem}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  h2{font-size:1.42rem}
+  .intro-hero h1{font-size:2rem}
+  .grille3,.roles{grid-template-columns:minmax(0,1fr)}
+  .activite{padding:1rem}
+  .panneau{padding:1rem}
+  .carte-concept{overflow-x:auto}
+  .carte-concept>svg{min-width:600px}
+}
+@media print{
+  nav.menu,.activite button,.saut,.actions-accueil,.parcours,.progression{display:none}
+  .mise{display:block}
+  body{background:#fff}
+  .intro-hero{border:0;padding:.5rem 0;background:#fff}
+  .panneau[hidden]{display:block!important}
+}
+</style>
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+<div class="mise">
+
+<nav class="menu" aria-label="Sections du guide">
+  <button type="button" class="mobile-menu" id="mobile-menu" aria-expanded="false" aria-controls="liens-navigation">☰ Menu</button>
+  <p class="titre-guide">3PDG260 · Approches pédagogiques</p>
+  <h2>Guide de l'enseignement explicite</h2>
+  <ol id="liens-navigation">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#fondements">0. Fondements théoriques</a></li>
+    <li><a href="#familles">1. Procédure, stratégie, raisonnement</a></li>
+    <li><a href="#quand">2. Quand choisir l'enseignement explicite?</a></li>
+    <li><a href="#comment">3. Comment le mener?</a></li>
+    <li><a href="#evaluer">4. Quoi, quand et comment évaluer?</a></li>
+    <li><a href="#cloture">Aide-mémoire et références</a></li>
+  </ol>
+  <div class="legende-menu" aria-label="Légende des couleurs">
+    <div><svg width="14" height="14" aria-hidden="true"><rect width="14" height="14" fill="#ECF3EB" stroke="#fff"/></svg> Procédure (carré)</div>
+    <div><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6.5" fill="#F4EFE7" stroke="#fff"/></svg> Stratégie cognitive (cercle)</div>
+    <div><svg width="14" height="14" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="#EAF3EF" stroke="#fff"/></svg> Façon de raisonner (triangle)</div>
+    <div><svg width="14" height="14" aria-hidden="true"><rect width="14" height="14" rx="3" fill="#EFF3E9" stroke="#fff"/></svg> Activité interactive</div>
+  </div>
+</nav>
+
+<main id="contenu">
+
+<!-- ===================== ACCUEIL ===================== -->
+<section id="accueil" aria-labelledby="t-accueil">
+  <div class="intro-hero">
+    <p class="sur-titre">3PDG260 · Synthèse interactive</p>
+    <h1 id="t-accueil">L'enseignement explicite, du choix du modèle à la régulation des apprentissages</h1>
+    <p class="chapeau">Une synthèse de nos animations sur la famille de l'enseignement direct. Retrouvez les fondements, les décisions de planification et les observations faites en classe pour concevoir vos propres séquences.</p>
+    <div class="actions-accueil">
+      <a class="action principale" href="#comment">Explorer les phases</a>
+      <a class="action" href="#cloture">Consulter l'aide-mémoire</a>
+    </div>
+  </div>
+  <p class="note-lecture">À parcourir à votre rythme · Activités avec rétroactions immédiates · Fonctionne aussi hors connexion</p>
+  <div class="parcours" aria-label="Trois entrées dans le guide">
+    <a href="#fondements"><strong>Je veux comprendre</strong><span>Fondements théoriques et distinction entre les objets d'apprentissage.</span></a>
+    <a href="#quand"><strong>Je dois choisir et planifier</strong><span>Pertinence du modèle, phases, rôles de l'enseignant et activité de l'élève.</span></a>
+    <a href="#evaluer"><strong>Je veux observer les apprentissages</strong><span>Critères de réussite, manifestations observables et régulation.</span></a>
+  </div>
+
+  <div class="carte">
+    <h3 style="margin-top:0">À la fin de ce guide, vous serez en mesure de :</h3>
+    <ol>
+      <li><strong>Distinguer</strong> une procédure, une stratégie cognitive et une façon de raisonner, et <strong>expliquer</strong> ce que chacune change dans la conduite de l'enseignement explicite.</li>
+      <li><strong>Justifier</strong> le choix de l'enseignement explicite (ou d'un autre modèle) selon l'objet d'apprentissage et le profil des élèves.</li>
+      <li><strong>Planifier</strong> les phases d'un enseignement explicite en précisant le rôle de l'enseignant et l'activité cognitive de l'élève.</li>
+      <li><strong>Concevoir</strong> des critères de réussite et des outils d'évaluation formative alignés sur les apprentissages visés.</li>
+    </ol>
+  </div>
+
+  <h3>Trois situations, une même famille</h3>
+  <p>Les trois situations présentées en animation servent d'exemples tout au long du guide. Elles appartiennent toutes à l'enseignement direct, mais l'objet enseigné n'est pas de même nature.</p>
+  <div class="grille3">
+    <div class="fam p">
+      <h4><svg width="16" height="16" aria-hidden="true"><rect width="16" height="16" fill="#406D59"/></svg> Enseigner une procédure</h4>
+      <p><strong>Mathématique</strong> (contributive : univers social)</p>
+      <p>Exprimer la population de villes du Saguenay-Lac-Saint-Jean sous forme de fraction, puis simplifier cette fraction.</p>
+    </div>
+    <div class="fam s">
+      <h4><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#80634A"/></svg> Enseigner une stratégie cognitive</h4>
+      <p><strong>Français</strong> (contributive : culture et citoyenneté québécoise)</p>
+      <p>Inférer le sens d'un mot inconnu à partir des indices du texte, tout en sachant quand consulter un lexique ou une autre source fiable (notamment pour les mots en inuktitut).</p>
+    </div>
+    <div class="fam r">
+      <h4><svg width="16" height="16" aria-hidden="true"><polygon points="8,0 16,16 0,16" fill="#426F68"/></svg> Enseigner une façon de raisonner</h4>
+      <p><strong>Science et technologie</strong> (contributive : mathématique)</p>
+      <p>S'appuyer sur des observations et des données (la fonte de glaçons) pour construire et justifier une explication scientifique.</p>
+    </div>
+  </div>
+
+  <div class="encadre garder">
+    <div class="tete"><span aria-hidden="true">✓</span> Ce qui a bien fonctionné dans les animations, à conserver</div>
+    <ul>
+      <li>Des activations de connaissances antérieures concrètes et visuelles.</li>
+      <li>Une information présentée sous plusieurs formes (lecture, écran, document), conforme à la CUA.</li>
+      <li>Des aide-mémoires construits avec les élèves et rappelés au moment de passer à la pratique.</li>
+      <li>Des contextes signifiants qui ancrent l'apprentissage dans la région et dans les cultures des Premiers Peuples.</li>
+      <li>Des défis gradués, une gestion du temps rendue visible et de beaux moments de questionnement métacognitif.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FONDEMENTS ===================== -->
+<section id="fondements" aria-labelledby="t-fond">
+  <h2 id="t-fond">0. Fondements théoriques : un rappel</h2>
+  <p>L'enseignement explicite emprunte à plusieurs théories de l'apprentissage vues dans le cours. La carte ci-dessous fait ressortir ce qui le fonde, ce qui l'inspire et ce qui s'y oppose. <strong>Cliquez sur un concept</strong> (ou utilisez la touche Tab puis Entrée) pour ouvrir sa fiche : une brève définition, la place du courant dans l'enseignement et son lien avec l'enseignement explicite.</p>
+
+  <div class="carte-concept">
+    <svg viewBox="0 0 960 590" role="group" aria-labelledby="carte-titre">
+      <title id="carte-titre">Carte conceptuelle des fondements de l'enseignement explicite</title>
+      <g fill="none" stroke-width="2">
+        <line x1="150" y1="60" x2="480" y2="300" stroke="#385848"/>
+        <line x1="480" y1="60" x2="480" y2="300" stroke="#385848"/>
+        <line x1="810" y1="60" x2="480" y2="300" stroke="#385848"/>
+        <line x1="480" y1="60" x2="810" y2="60" stroke="#385848"/>
+        <line x1="150" y1="210" x2="480" y2="300" stroke="#385848"/>
+        <line x1="810" y1="210" x2="480" y2="300" stroke="#385848"/>
+        <line x1="150" y1="370" x2="480" y2="300" stroke="#385848"/>
+        <line x1="810" y1="370" x2="480" y2="300" stroke="#526F55" stroke-dasharray="2 5" stroke-linecap="round" stroke-width="2.5"/>
+        <line x1="480" y1="520" x2="480" y2="300" stroke="#80634A" stroke-dasharray="9 6"/>
+        <line x1="810" y1="520" x2="480" y2="520" stroke="#526F55" stroke-dasharray="2 5" stroke-linecap="round" stroke-width="2.5"/>
+        <line x1="150" y1="520" x2="480" y2="300" stroke="#526F55" stroke-dasharray="2 5" stroke-linecap="round" stroke-width="2.5"/>
+        <path d="M45 60 L20 60 L20 520 L45 520" stroke="#91483B" stroke-dasharray="9 6"/>
+      </g>
+      <g font-size="13" fill="#25342B" text-anchor="middle" style="paint-order:stroke;stroke:#FFFFFF;stroke-width:5px;stroke-linejoin:round">
+        <text x="315" y="176">fonde</text>
+        <text x="480" y="182">fonde</text>
+        <text x="645" y="176">justifie</text>
+        <text x="645" y="64">précise</text>
+        <text x="315" y="258">oriente</text>
+        <text x="645" y="258">rendue visible</text>
+        <text x="315" y="340">inspire</text>
+        <text x="645" y="340">limite</text>
+        <text x="480" y="440">s'oppose</text>
+        <text x="645" y="524">nuance</text>
+        <text x="315" y="420">rapproche / distingue</text>
+        <text x="27" y="294" text-anchor="start">rupture</text>
+      </g>
+      <g id="noeuds" font-family="inherit"></g>
+    </svg>
+    <div class="legende" aria-hidden="true">
+      <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#385848" stroke-width="2"/></svg> fonde, inspire</span>
+      <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#80634A" stroke-width="2" stroke-dasharray="9 6"/></svg> s'oppose</span>
+      <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#526F55" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/></svg> nuance, limite, rapproche</span>
+      <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#91483B" stroke-width="2" stroke-dasharray="9 6"/></svg> rupture coloniale</span>
+      <span><svg width="18" height="14"><rect x="1" y="1" width="16" height="12" rx="3" fill="#F3F0E6" stroke="#827456"/></svg> double regard autochtone</span>
+    </div>
+    <div id="bulle" role="region" aria-live="polite" aria-label="Fiche du concept" hidden></div>
+  </div>
+
+  <details>
+    <summary>Version texte de la carte (pour la lecture séquentielle)</summary>
+    <ul id="carte-texte"></ul>
+  </details>
+
+  <h3>Pourquoi le guidage minimal peut-il mettre en difficulté les élèves novices?</h3>
+  <p>C'est l'argument central de Kirschner, Sweller et Clark (2006). Il repose notamment sur l'architecture de la mémoire humaine.</p>
+  <ol>
+    <li><strong>Le novice n'a pas encore de schémas</strong> en mémoire à long terme pour organiser la tâche. Tout doit donc être traité en mémoire de travail, qui ne retient que quelques éléments à la fois.</li>
+    <li><strong>Chercher une solution sans guidage sollicite fortement cette mémoire de travail.</strong> L'élève essaie, compare, revient en arrière. Il peut même trouver la bonne réponse sans pour autant avoir construit une compréhension transférable de la démarche.</li>
+    <li><strong>Un exemple travaillé ou un modelage libère cette capacité</strong> : l'élève peut consacrer son attention à comprendre la structure de la solution et à l'encoder. C'est l'effet de l'exemple travaillé (Sweller et Cooper, 1985).</li>
+    <li><strong>Chez l'élève déjà compétent, les besoins de guidage changent.</strong> Il possède déjà des schémas : un guidage trop détaillé peut devenir redondant et parfois nuire. C'est l'effet de renversement lié à l'expertise (Kalyuga et al., 2003).</li>
+  </ol>
+  <div class="fam p" style="margin:1rem 0">
+    <strong>Exemple.</strong> Un élève qui ne maîtrise pas la simplification doit « trouver » comment réduire 6/30. Par essais et erreurs, il peut arriver à 1/5, mais il aura dépensé ses ressources à chercher plutôt qu'à comprendre pourquoi on divise le numérateur et le dénominateur par un même diviseur.
+  </div>
+  <div class="encadre prudence">
+    <div class="tete">Une nuance importante</div>
+    Hmelo-Silver, Duncan et Chinn (2007) répondent que l'apprentissage par problèmes et l'investigation bien conçus ne relèvent pas du guidage minimal : ils sont fortement étayés. L'opposition pertinente est donc entre un guidage absent et un guidage présent, et non entre l'enseignement explicite et les autres modèles.
+  </div>
+
+  <h3>Le triangle pédagogique de Houssaye à travers les phases</h3>
+  <p>Houssaye (2014) relie trois pôles par trois relations, chacune associée à un processus. Selon lui, une situation pédagogique privilégie une relation, tandis que le troisième pôle « fait le mort ».</p>
+  <div class="defile">
+  <table>
+    <thead><tr><th>Relation</th><th>Pôles reliés</th><th>Processus</th></tr></thead>
+    <tbody>
+      <tr><th>Didactique</th><td>Enseignant et savoir</td><td>Enseigner</td></tr>
+      <tr><th>Pédagogique</th><td>Enseignant et élèves</td><td>Former</td></tr>
+      <tr><th>D'apprentissage</th><td>Élèves et savoir</td><td>Apprendre</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>En utilisant le triangle comme <strong>grille de lecture</strong>, le transfert graduel de la responsabilité peut être éclairé par le déplacement de la relation mise en avant : d'« enseigner » vers « former », puis vers « apprendre ». Il ne s'agit pas d'une correspondance mécanique entre un sommet et une phase.</p>
+  <div class="carte-concept">
+    <svg viewBox="0 0 680 300" role="img" aria-labelledby="hous-t hous-d">
+      <title id="hous-t">Une lecture des phases de l'enseignement explicite à travers le triangle de Houssaye</title>
+      <desc id="hous-d">Au modelage, la relation didactique peut être mise en avant. En pratique guidée, la relation pédagogique. En pratique autonome, la relation d'apprentissage, l'enseignant étant en retrait. À l'objectivation, les trois pôles contribuent à la mise en relation des acquis. Il s'agit d'une grille de lecture proposée pour le cours.</desc>
+      <g stroke-linecap="round">
+        <line x1="115" y1="60" x2="60" y2="160" stroke="#385848" stroke-width="4"/>
+        <line x1="60" y1="160" x2="170" y2="160" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="170" y1="160" x2="115" y2="60" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="265" y1="60" x2="210" y2="160" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="210" y1="160" x2="320" y2="160" stroke="#385848" stroke-width="4"/>
+        <line x1="320" y1="160" x2="265" y2="60" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="415" y1="60" x2="360" y2="160" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="360" y1="160" x2="470" y2="160" stroke="#9AAB9D" stroke-width="1.2" stroke-dasharray="4 4"/>
+        <line x1="470" y1="160" x2="415" y2="60" stroke="#385848" stroke-width="4"/>
+        <line x1="565" y1="60" x2="510" y2="160" stroke="#385848" stroke-width="2.4"/>
+        <line x1="510" y1="160" x2="620" y2="160" stroke="#385848" stroke-width="2.4"/>
+        <line x1="620" y1="160" x2="565" y2="60" stroke="#385848" stroke-width="2.4"/>
+      </g>
+      <g id="sommets" font-size="14" font-weight="600" text-anchor="middle"></g>
+      <g font-size="14" text-anchor="middle" fill="#25342B">
+        <text x="115" y="203" font-weight="600" fill="#385848">Modelage</text>
+        <text x="115" y="223">Enseigner</text>
+        <text x="115" y="241" font-size="12.5" fill="#4E6254">relation didactique</text>
+        <text x="265" y="203" font-weight="600" fill="#385848">Pratique guidée</text>
+        <text x="265" y="223">Former</text>
+        <text x="265" y="241" font-size="12.5" fill="#4E6254">relation pédagogique</text>
+        <text x="415" y="203" font-weight="600" fill="#385848">Pratique autonome</text>
+        <text x="415" y="223">Apprendre</text>
+        <text x="415" y="241" font-size="12.5" fill="#4E6254">relation d'apprentissage</text>
+        <text x="565" y="203" font-weight="600" fill="#385848">Objectivation</text>
+        <text x="565" y="223">Mise en relation</text>
+        <text x="565" y="241" font-size="12.5" fill="#4E6254">des apprentissages</text>
+        <text x="340" y="282" font-size="12.5" fill="#4E6254">S : savoir · E : enseignant · É : élèves · Trait plein : relation dominante · Contour pointillé : enseignant en retrait</text>
+      </g>
+    </svg>
+  </div>
+  <ul>
+    <li><strong>Mise en situation.</strong> Avant le premier triangle, la relation pédagogique installe le sens : on annonce ce qu'on apprendra et pourquoi.</li>
+    <li><strong>Modelage.</strong> L'enseignant est en relation directe avec le savoir et le rend visible. Le risque : que les élèves « fassent le mort ». D'où la vérification de la compréhension avant d'aller plus loin.</li>
+    <li><strong>Pratique guidée.</strong> La relation dominante relie l'enseignant aux élèves, autour d'une tâche que <em>les élèves</em> réalisent.</li>
+    <li><strong>Pratique autonome.</strong> L'élève entre seul en relation avec le savoir. L'enseignant est en retrait, mais il observe et recueille des traces.</li>
+    <li><strong>Objectivation.</strong> L'élève verbalise ce qu'il a appris, et l'enseignant aide à organiser et institutionnaliser le savoir. Les trois pôles sont pris en considération, sans que les trois relations soient nécessairement dominantes au même moment.</li>
+  </ul>
+  <div class="encadre vigil">
+    <div class="tete"><span aria-hidden="true">!</span> Ce qu'on a observé en animation : le triangle qui refuse de tourner</div>
+    <ul>
+      <li>Une pratique guidée qui devient un deuxième modelage reste bloquée sur « enseigner ».</li>
+      <li>Répondre à la place des élèves, ou valider trop vite une hypothèse, ramène la relation au savoir vers l'enseignant au moment où elle devait passer à l'élève.</li>
+      <li>Une pratique « autonome » encore très encadrée n'atteint jamais vraiment « apprendre ».</li>
+    </ul>
+  </div>
+  <div class="encadre dr">
+    <div class="tete">Double regard</div>
+    Dans certaines traditions pédagogiques autochtones décrites dans le cours, la relation n'est pas simplement un côté du triangle parmi d'autres : elle conditionne l'accès à certains savoirs. Les relations avec les aînés, la communauté et le territoire peuvent jouer un rôle central dans leur transmission. Les pratiques varient selon les nations, les personnes et les contextes.<br>
+    <strong>À discuter :</strong> dans le modèle de Houssaye, un pôle peut « faire le mort ». Est-ce pensable dans une pédagogie où l'accès au savoir est d'abord relationnel?
+  </div>
+  <div class="encadre prudence">Cette mise en correspondance du triangle et des phases de l'enseignement explicite est une <strong>proposition d'analyse pour le cours</strong>, et non un modèle publié par Houssaye. Elle aide à questionner la place laissée à l'activité de l'élève, sans réduire l'enseignement à une succession de relations exclusives.</div>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+<!-- ===================== FAMILLES ===================== -->
+<section id="familles" aria-labelledby="t-fam">
+  <h2 id="t-fam">1. Procédure, stratégie cognitive, façon de raisonner : ce que ça change</h2>
+  <p>Les trois situations suivent la même structure (modelage, pratique guidée, pratique autonome). Pourtant, <strong>ce que l'on modélise n'est pas de même nature</strong>, et cela transforme la façon de conduire chaque phase. La typologie des connaissances de Tardif (1992) aide à le voir : déclaratives (le <em>quoi</em>), procédurales (le <em>comment</em>), conditionnelles (le <em>quand</em> et le <em>pourquoi</em>).</p>
+
+  <div class="grille3">
+    <div class="fam p">
+      <h4><svg width="16" height="16" aria-hidden="true"><rect width="16" height="16" fill="#406D59"/></svg> Une procédure</h4>
+      <p>Une <strong>suite ordonnée d'actions</strong> qui, exécutée correctement, mène à un résultat prévisible. Elle est fiable et reproductible, à la manière d'un algorithme.</p>
+      <p><strong>Connaissance dominante</strong> : procédurale, soutenue par le <em>pourquoi</em> de chaque étape.</p>
+      <p><strong>Visée</strong> : l'exécution juste, comprise, puis automatisée.</p>
+      <p><em>Ex. : simplifier une fraction, calculer la fraction d'une quantité, mesurer une température.</em></p>
+    </div>
+    <div class="fam s">
+      <h4><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#80634A"/></svg> Une stratégie cognitive</h4>
+      <p>Un <strong>moyen que l'élève choisit</strong> consciemment pour atteindre un but cognitif (comprendre, retenir, résoudre). Elle ne garantit pas le résultat : elle augmente les chances de réussir, si on l'emploie au bon moment.</p>
+      <p><strong>Connaissance dominante</strong> : conditionnelle (quand, pourquoi, à quelles conditions), avec une forte part de métacognition.</p>
+      <p><strong>Visée</strong> : l'utilisation autonome et adaptée au contexte.</p>
+      <p><em>Ex. : inférer le sens d'un mot à l'aide des indices du texte, se faire une image mentale, relire quand on perd le fil.</em></p>
+    </div>
+    <div class="fam r">
+      <h4><svg width="16" height="16" aria-hidden="true"><polygon points="8,0 16,16 0,16" fill="#426F68"/></svg> Une façon de raisonner</h4>
+      <p>Un <strong>mode de pensée propre à une discipline</strong>, régi par des critères de validité : ce qui compte comme une preuve, ce qui rend une explication acceptable. En science : relier des observations et des données à une explication, puis la justifier.</p>
+      <p><strong>Connaissance dominante</strong> : épistémique (ce qui rend un énoncé valide), qui mobilise aussi des procédures et des stratégies.</p>
+      <p><strong>Visée</strong> : une argumentation autonome, fondée sur des preuves.</p>
+      <p><em>Ex. : distinguer une hypothèse d'une conclusion, justifier une explication avec des données, comparer en ne changeant qu'un facteur.</em></p>
+    </div>
+  </div>
+
+  <div class="encadre vigil">
+    <div class="tete"><span aria-hidden="true">!</span> Démarche ou façon de raisonner?</div>
+    Une <strong>démarche</strong> (par exemple, la démarche d'investigation) organise l'activité en étapes. Le <strong>raisonnement</strong> est ce qui donne de la valeur à ces étapes. Le piège : enseigner la démarche comme une procédure, une liste d'étapes à cocher, sans que l'élève comprenne <em>pourquoi</em> il observe, compare ou justifie. Dans une « démarche recette », l'élève peut remplir chaque case sans jamais raisonner.
+  </div>
+
+  <h3>Ce que la nature de l'objet change dans l'enseignement explicite</h3>
+  <div class="defile">
+  <table>
+    <caption>Comparaison des trois familles, phase par phase</caption>
+    <thead><tr><th scope="col">Aspect</th><th scope="col" class="p">Procédure</th><th scope="col" class="s">Stratégie cognitive</th><th scope="col" class="r">Façon de raisonner</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Le besoin à créer en mise en situation</th><td>« Il existe une façon fiable de faire ce calcul. »</td><td>« Il y a des moments où je bloque en lisant ; cette stratégie m'aide <em>dans ces moments-là</em>. »</td><td>« On a une question qu'on ne peut pas trancher par une opinion : il nous faut des données. » La question à investiguer est écrite et dite clairement.</td></tr>
+      <tr><th scope="row">Ce qu'on modélise</th><td>Les étapes et la justification de chacune.</td><td>La décision d'utiliser la stratégie, son déroulement et la vérification de son efficacité.</td><td>Le passage de l'observation à l'explication : je constate, j'explique, je justifie.</td></tr>
+      <tr><th scope="row">Ce que la pensée à voix haute rend visible</th><td>Les étapes implicites (« Comment je sais que je peux diviser par 6? »).</td><td>Le <em>quand</em> et le <em>pourquoi</em> : « Je ne comprends pas ce mot, alors je cherche des indices… »</td><td>Le lien entre la donnée et l'affirmation : « Je dis que… parce que dans mon tableau, je vois… »</td></tr>
+      <tr><th scope="row">Rôle des exemples</th><td>Varier les nombres et les contextes ; montrer une erreur fréquente.</td><td>Indispensable : <strong>un contre-exemple</strong>, où la stratégie ne suffit pas et où il faut en choisir une autre.</td><td>Montrer une explication <em>non</em> justifiée, ou une conclusion tirée trop vite, pour faire voir ce qui manque.</td></tr>
+      <tr><th scope="row">Sur quoi porte l'étayage en pratique guidée</th><td>L'ordre et l'exactitude des étapes, et leur justification.</td><td>Le choix de la stratégie et l'autorégulation (« Est-ce que ça m'a aidé? »).</td><td>La qualité de la preuve : « Qu'est-ce qui te permet de dire ça? Où le vois-tu dans tes données? »</td></tr>
+      <tr><th scope="row">Visée de la pratique autonome</th><td>Exactitude, puis automatisation.</td><td>Mobilisation spontanée dans un nouveau texte.</td><td>Argumentation autonome dans une nouvelle situation, sans questions imposées.</td></tr>
+      <tr><th scope="row">Erreur typique à anticiper</th><td>Une étape oubliée ou mal exécutée ; une règle appliquée sans compréhension.</td><td>Ne pas utiliser la stratégie au bon moment, ou s'y accrocher quand elle ne fonctionne pas.</td><td>Confondre hypothèse et conclusion ; généraliser à partir d'une seule observation ; ignorer une donnée contradictoire.</td></tr>
+      <tr><th scope="row">Risque de dérive</th><td>Un « truc » mémorisé sans le <em>pourquoi</em>.</td><td>Transformer la stratégie en procédure rigide, appliquée partout.</td><td>Une démarche recette, ou un enseignant qui valide les idées à la place des élèves.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Transposition didactique : du savoir savant au savoir enseigné</h3>
+  <p>Distinguer les trois niveaux aide à vérifier que la simplification nécessaire au primaire ne trahit pas le savoir de référence.</p>
+  <div class="defile">
+  <table>
+    <thead><tr><th scope="col">Niveau</th><th scope="col" class="p">Procédure (fractions)</th><th scope="col" class="s">Stratégie (inférence lexicale)</th><th scope="col" class="r">Raisonnement (fonte de la glace)</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Savoir savant</th><td>Fractions équivalentes comme représentations d'un même nombre rationnel ; fraction irréductible.</td><td>Recherches en psychologie cognitive sur la compréhension en lecture et l'apprentissage du vocabulaire en contexte.</td><td>Épistémologie et argumentation scientifiques ; physique des changements d'état et des transferts d'énergie.</td></tr>
+      <tr><th scope="row">Savoir à enseigner</th><td>Ce que prévoient le programme et la progression des apprentissages pour les fractions au primaire.</td><td>Les stratégies de lecture prévues au programme de français.</td><td>Ce que le programme de science et technologie retient des démarches scientifiques et des changements d'état au primaire.</td></tr>
+      <tr><th scope="row">Savoir enseigné</th><td>Une représentation imagée (par ex. les bulles du poisson) au service de la procédure, <em>avec</em> son pourquoi.</td><td>Un aide-mémoire de 5 ou 6 étapes, modélisé sur un texte riche en indices.</td><td>Une question à investiguer, un tableau de données, des phrases « je constate, j'explique, je justifie » adaptées à la 3e année.</td></tr>
+      <tr><th scope="row">Vigilance</th><td>La représentation imagée ne remplace pas l'explication de l'équivalence.</td><td>Ne pas faire croire que le contexte suffit toujours.</td><td>Le vocabulaire est adapté au niveau, mais exact : la chaleur n'est pas une substance qu'un objet « contient » ; c'est un transfert d'énergie.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="encadre prudence">Pour le savoir à enseigner, référez-vous directement au PFEQ et à la progression des apprentissages de chaque discipline : ce tableau en indique la place, sans citer leur formulation.</p>
+
+  <div class="encadre dr">
+    <div class="tete">Double regard</div>
+    Dans la situation en français, la stratégie d'inférence porte notamment sur des mots en inuktitut. La langue n'est pas un simple décor : elle mérite d'être présentée comme une langue vivante. L'inférence à partir du contexte a des limites ; il importe d'appuyer la compréhension sur un lexique fiable et de ne pas attribuer à un mot un sens seulement supposé. L'activité peut ainsi ouvrir sur une discussion respectueuse des langues et des savoirs.
+  </div>
+
+  <div class="activite" id="act-familles">
+    <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : de quelle famille s'agit-il?</div>
+    <p class="consigne">Pour chaque objet d'apprentissage, choisissez la famille qui convient. Une rétroaction s'affiche après chaque choix.</p>
+    <div data-quiz="familles"></div>
+  </div>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+<!-- ===================== QUAND ===================== -->
+<section id="quand" aria-labelledby="t-quand">
+  <h2 id="t-quand">2. Quand choisir l'enseignement explicite?</h2>
+  <p>Aucun modèle n'est bon en soi : sa pertinence dépend de l'objet d'apprentissage, du niveau d'expertise des élèves et de l'intention poursuivie. Les situations ci-dessous sont des <strong>repères pour décider</strong>, non des règles absolues.</p>
+
+  <div class="defile">
+  <table>
+    <thead><tr><th scope="col">L'enseignement explicite est pertinent quand…</th><th scope="col">Il l'est moins quand…</th></tr></thead>
+    <tbody>
+      <tr><td>les élèves sont <strong>novices</strong> par rapport à l'objet (premier contact).</td><td>les élèves maîtrisent déjà l'objet : le guidage devient redondant (effet de renversement lié à l'expertise).</td></tr>
+      <tr><td>l'objet est <strong>complexe ou hiérarchisé</strong>, avec des étapes qu'on ne découvre pas facilement seul.</td><td>l'intention est que les élèves construisent eux-mêmes une démarche ouverte (projet, problème authentique).</td></tr>
+      <tr><td>l'objet comporte une part <strong>invisible</strong> (stratégie, raisonnement) qu'il faut rendre observable.</td><td>l'objectif principal est d'ordre relationnel, créatif ou identitaire (débattre, créer, s'engager dans la communauté).</td></tr>
+      <tr><td>des <strong>conceptions erronées</strong> risquent de s'installer si l'élève cherche seul.</td><td>l'exploration libre est la visée même de la tâche (découvrir un matériel, formuler des questions).</td></tr>
+      <tr><td>des élèves rencontrent des <strong>obstacles liés à l'implicite</strong> : rendre visibles les étapes et les attentes peut les aider.</td><td>l'intention requiert à ce moment-là une exploration autonome et des choix ouverts.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Combiner plutôt qu'opposer</h3>
+  <p>L'enseignement explicite se combine très bien aux autres modèles du cours. On l'insère souvent sous forme de <strong>mini-leçon</strong>, au moment où les élèves en ont besoin.</p>
+  <ul>
+    <li><strong>Apprentissage par problèmes ou par projets</strong> : une mini-leçon explicite sur une stratégie (prendre des notes, organiser des données) au moment où le projet l'exige.</li>
+    <li><strong>Démarche d'investigation scientifique</strong> : on enseigne explicitement la façon de raisonner (justifier à l'aide des données), puis les élèves la mobilisent dans une investigation plus ouverte. C'est le cas de la situation en science.</li>
+    <li><strong>Apprentissage coopératif</strong> : les habiletés coopératives elles-mêmes peuvent être enseignées explicitement (voir Bissonnette, Gauthier et Castonguay, 2017, sur l'enseignement explicite des comportements).</li>
+    <li><strong>Classe inversée</strong> : le modelage peut se faire en capsule, et la pratique guidée en classe, là où l'étayage de l'enseignant est le plus utile.</li>
+  </ul>
+
+  <div class="encadre cua">
+    <div class="tete">Repère CUA</div>
+    L'enseignement explicite réduit plusieurs obstacles : objectifs visibles, étapes découpées, aide-mémoire durable, rétroaction fréquente. Ces options soutiennent les fonctions exécutives et la compréhension. Mais il peut en créer d'autres s'il n'offre qu'un seul mode de représentation ou d'expression : on varie donc les formats du modelage (oral, écrit, visuel, manipulation) et les façons de montrer ce qu'on a compris.
+  </div>
+
+  <div class="activite" id="act-quand">
+    <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : quel choix feriez-vous?</div>
+    <p class="consigne">Pour chaque scénario, indiquez si l'enseignement explicite est le choix principal, si un autre modèle convient mieux, ou s'il faut combiner les deux.</p>
+    <div data-quiz="quand"></div>
+  </div>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+<!-- ===================== COMMENT ===================== -->
+<section id="comment" aria-labelledby="t-comment">
+  <h2 id="t-comment">3. Comment mener un enseignement explicite?</h2>
+  <p>Pour chaque phase, vous trouverez ce que fait l'enseignant sur le plan <strong>didactique</strong> (son rapport au savoir : choix, découpage, représentation, erreurs) et sur le plan <strong>pédagogique</strong> (la gestion de la relation et du groupe : interactions, participation, climat, rétroaction), ainsi que ce qui se passe <strong>dans la tête de l'élève</strong> (point de vue cognitif).</p>
+  <p class="note-methode"><strong>Fil conducteur :</strong> « Je fais » (modelage), « nous faisons » (pratique guidée), « tu fais » (pratique autonome). La vérification de la compréhension intervient avant le passage à la pratique guidée et l'évaluation formative permet de revenir en arrière au besoin. L'objectivation peut aussi ponctuer plusieurs moments de la séquence.</p>
+
+  <div class="onglets" role="tablist" aria-label="Phases de l'enseignement explicite" id="onglets-phases"></div>
+  <div id="panneaux-phases"></div>
+
+  <div class="activite" id="act-ordre">
+    <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : remettre les étapes dans l'ordre</div>
+    <p class="consigne">Replacez les cinq phases et le moment charnière de <strong>vérification de la compréhension</strong>. Celui-ci n'est pas une sixième phase autonome : il précède le transfert de responsabilité vers la pratique guidée.</p>
+    <ol class="ordre" id="liste-ordre" style="padding-left:0;list-style:none"></ol>
+    <button class="btn plein" id="verif-ordre">Vérifier l'ordre</button>
+    <div id="retro-ordre" aria-live="polite"></div>
+  </div>
+
+  <div class="activite" id="act-relance">
+    <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : quelle relance choisir?</div>
+    <p class="consigne">Des élèves de 3e année observent des glaçons. Choisissez la réponse de l'enseignante qui fait le plus avancer leur raisonnement.</p>
+    <div data-quiz="relance"></div>
+  </div>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+<!-- ===================== ÉVALUER ===================== -->
+<section id="evaluer" aria-labelledby="t-eval">
+  <h2 id="t-eval">4. Quoi, quand et comment évaluer?</h2>
+  <p>Dans l'enseignement explicite, l'évaluation formative n'est pas une étape ajoutée à la fin : elle est <strong>tissée dans chaque phase</strong>. C'est elle qui permet de décider s'il faut reprendre le modelage, prolonger la pratique guidée ou passer à l'autonomie.</p>
+
+  <h3>Quand évaluer?</h3>
+  <div class="defile">
+  <table>
+    <thead><tr><th scope="col">Moment</th><th scope="col">Intention</th><th scope="col">Exemples d'outils</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Mise en situation</th><td>Vérifier les préalables et repérer les conceptions erronées.</td><td>Question d'amorce, dessin, ardoises.</td></tr>
+      <tr><th scope="row">Fin du modelage</th><td>Vérifier la compréhension <em>avant</em> de transférer la responsabilité.</td><td>Questions ciblées sur le pourquoi, réponses de tous (ardoises, signal de la main, bâtonnets).</td></tr>
+      <tr><th scope="row">Pratique guidée</th><td>Réguler immédiatement, corriger l'erreur avant qu'elle se fixe.</td><td>Observation en circulant, questions d'étayage, grille d'observation.</td></tr>
+      <tr><th scope="row">Pratique autonome</th><td>Recueillir des traces de maîtrise ; viser un taux de réussite élevé.</td><td>Production, grille d'observation, billet de sortie.</td></tr>
+      <tr><th scope="row">Objectivation</th><td>Faire prendre conscience à l'élève de ce qu'il a appris et comment.</td><td>Autoévaluation à partir des critères, retour métacognitif.</td></tr>
+      <tr><th scope="row">En différé</th><td>Consolider la rétention et vérifier le transfert.</td><td>Révisions espacées (quotidiennes, hebdomadaires, mensuelles) ; réinvestissement dans un autre contexte (Rosenshine, 2012).</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Quoi évaluer? Plus que la bonne réponse</h3>
+  <p>Une bonne réponse peut cacher une compréhension fragile. Les critères doivent porter sur ce que l'objet a de spécifique.</p>
+  <div class="defile">
+  <table>
+    <thead><tr><th scope="col" class="p">Procédure</th><th scope="col" class="s">Stratégie cognitive</th><th scope="col" class="r">Façon de raisonner</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><ul><li>Exactitude des étapes et du résultat</li><li>Capacité à justifier chaque étape</li><li>Contrôle du résultat (« Est-ce simplifié au maximum? »)</li></ul></td>
+        <td><ul><li>Utilisation de la stratégie au bon moment</li><li>Capacité à dire pourquoi elle est utile</li><li>Autorégulation : vérifier, valider, changer de stratégie au besoin</li></ul></td>
+        <td><ul><li>Pertinence des observations et des données retenues</li><li>Lien logique entre les données et l'explication</li><li>Distinction entre hypothèse et conclusion</li><li>Vocabulaire juste et adapté</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Comment évaluer? Le principe d'alignement</h3>
+  <p>Les <strong>opérations rendues visibles au modelage</strong>, les <strong>critères de réussite</strong> et l'<strong>outil formatif</strong> doivent former une chaîne cohérente. Pour une procédure, les critères peuvent reprendre l'ordre des étapes. Pour une stratégie ou un raisonnement, ils doivent surtout rendre observables les décisions et les liens intellectuels attendus, sans transformer la pensée en recette. On présente les critères aux élèves <em>avant</em> la pratique guidée, puis on les réutilise au retour collectif. Les critères servent alors trois fins :</p>
+  <ul>
+    <li>vérifier la <strong>compréhension des opérations</strong>, et pas seulement la réponse ;</li>
+    <li>offrir une <strong>rétroaction précise</strong> aux élèves en difficulté ;</li>
+    <li>permettre à l'élève de <strong>s'autoévaluer</strong>.</li>
+  </ul>
+  <h3>Critère, manifestation observable et trace : ne pas les confondre</h3>
+  <p>Un critère indique <strong>ce qui permet de juger la qualité</strong> d'un apprentissage ; une manifestation observable décrit <strong>ce que l'élève fait ou dit</strong> ; une trace est <strong>ce qui reste consultable</strong> de cette activité. La trace n'est pas forcément un écrit.</p>
+  <div class="defile">
+  <table>
+    <thead><tr><th scope="col">Objet</th><th scope="col">Critère de réussite</th><th scope="col">Manifestation observable</th><th scope="col">Trace possible</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Procédure : simplifier une fraction</th><td>La division préserve l'équivalence des fractions et conduit à une fraction irréductible.</td><td>L'élève divise numérateur et dénominateur par un même nombre et explique pourquoi.</td><td>Calcul annoté ou explication orale conservée.</td></tr>
+      <tr><th scope="row">Raisonnement : expliquer la fonte</th><td>L'explication est cohérente avec les observations et les données recueillies.</td><td>L'élève formule une affirmation, désigne une donnée pertinente et explicite le lien entre les deux.</td><td>Schéma commenté, tableau annoté ou enregistrement audio.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="fam p" style="margin:1rem 0">
+    <strong>Questions d'étayage, situation sur les fractions</strong>
+    <ul style="margin-bottom:0">
+      <li>« Comment as-tu trouvé les nombres nécessaires? »</li>
+      <li>« Pourquoi peux-tu diviser 6 et 30 par 6? »</li>
+      <li>« Comment sais-tu que ta fraction est simplifiée au maximum? »</li>
+    </ul>
+  </div>
+
+  <div class="encadre vigil">
+    <div class="tete"><span aria-hidden="true">!</span> Ce qu'on a observé en animation</div>
+    <ul>
+      <li>Des séquences sans critères de réussite explicites, ce qui empêchait de savoir ce qu'on observait.</li>
+      <li>Un outil formatif dont l'ordre des étapes ne correspondait pas à celui de l'aide-mémoire.</li>
+      <li>Des questions auxquelles seuls quelques élèves répondaient : que fait-on de ceux qui se taisent?</li>
+    </ul>
+  </div>
+
+  <div class="encadre cua">
+    <div class="tete">Repère CUA</div>
+    Offrir plusieurs façons de montrer sa compréhension : dire, écrire, dessiner, manipuler, pointer sur l'aide-mémoire. Co-construire les critères avec les élèves, les afficher, et fournir une grille d'autoévaluation illustrée. L'élève qui écrit difficilement ne doit pas être évalué sur son écriture quand c'est son raisonnement qu'on cherche à voir.
+  </div>
+
+  <div class="encadre dr">
+    <div class="tete">Double regard</div>
+    Dans certaines pratiques éducatives autochtones, l'apprentissage et sa reconnaissance sont étroitement liés à la participation, à l'observation et aux relations. Sans généraliser à toutes les nations, ce regard invite à valoriser l'observation dans l'action, la parole et l'autoévaluation, et à se demander : <em>mon outil reconnaît-il les différentes façons dont mes élèves montrent ce qu'ils savent?</em>
+  </div>
+
+  <div class="activite" id="act-align">
+    <div class="tete"><span aria-hidden="true">✎</span> À vous de jouer : relier les manifestations aux étapes</div>
+    <p class="consigne">Voici les étapes de l'aide-mémoire sur les fractions. Associez chaque <strong>manifestation observable</strong> à l'étape qu'elle permet de vérifier. Ces manifestations pourront ensuite être mises en relation avec des critères de réussite plus généraux.</p>
+    <ol>
+      <li>Repérer les nombres utiles (la partie et le tout).</li>
+      <li>Écrire la fraction.</li>
+      <li>Trouver un diviseur commun.</li>
+      <li>Diviser le numérateur et le dénominateur.</li>
+      <li>Vérifier que la fraction est simplifiée au maximum.</li>
+    </ol>
+    <div id="liste-align"></div>
+    <button class="btn plein" id="verif-align">Vérifier mes associations</button>
+    <div id="retro-align" aria-live="polite"></div>
+  </div>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+<!-- ===================== CLÔTURE ===================== -->
+<section id="cloture" aria-labelledby="t-clot">
+  <h2 id="t-clot">Aide-mémoire pour planifier et s'autoévaluer</h2>
+  <p>Appliquez cette liste à votre propre séquence. Elle reprend les points les plus souvent négligés en animation.</p>
+  <div class="activite">
+    <div class="tete"><span aria-hidden="true">✎</span> Ma séquence en enseignement explicite</div>
+    <div class="coche" id="liste-coche"></div>
+    <p id="compte-coche" aria-live="polite" style="font-weight:600;color:var(--inter)"></p>
+  </div>
+
+  <div class="carte">
+    <h3 style="margin-top:0">Question de retour réflexif</h3>
+    <p>Dans votre séquence, à quel moment le triangle a-t-il le plus de risque de « refuser de tourner »? Que prévoyez-vous pour laisser réellement la place à l'élève?</p>
+  </div>
+
+  <h3>Références</h3>
+  <ul class="refs">
+    <li>Anderson, L. W. et Krathwohl, D. R. (dir.). (2001). <em>A taxonomy for learning, teaching, and assessing</em>. Longman.</li>
+    <li>Aurousseau, E. (2026). <em>Fondements des apprentissages et approches pédagogiques : perspectives autochtones</em> [document de cours, 3PDG260].</li>
+    <li>Bissonnette, S., Gauthier, C. et Castonguay, M. (2017). <em>L'enseignement explicite des comportements</em>. Chenelière Éducation.</li>
+    <li>Bousquet, M.-P. et Karl, S. H. (dir.). (2019). <em>La blessure qui dormait à poings fermés : l'héritage des pensionnats autochtones au Québec</em>. Recherches amérindiennes au Québec.</li>
+    <li>Collins, A., Brown, J. S. et Newman, S. E. (1989). Cognitive apprenticeship. Dans L. B. Resnick (dir.), <em>Knowing, learning, and instruction</em> (p. 453-494). Erlbaum.</li>
+    <li>Dion, J., Hains, J., Ross, A. et Collin-Vézina, D. (2016). Pensionnats autochtones : impact intergénérationnel. <em>Enfances, Familles, Générations</em>, (25).</li>
+    <li>Flavell, J. H. (1979). Metacognition and cognitive monitoring. <em>American Psychologist, 34</em>(10), 906-911.</li>
+    <li>Gauthier, C., Bissonnette, S. et Richard, M. (2013). <em>Enseignement explicite et réussite des élèves</em>. ERPI.</li>
+    <li>Hmelo-Silver, C. E., Duncan, R. G. et Chinn, C. A. (2007). Scaffolding and achievement in problem-based and inquiry learning. <em>Educational Psychologist, 42</em>(2), 99-107.</li>
+    <li>Houssaye, J. (2014). <em>Le triangle pédagogique : les différentes facettes de la pédagogie</em>. ESF Éditeur.</li>
+    <li>Kalyuga, S., Ayres, P., Chandler, P. et Sweller, J. (2003). The expertise reversal effect. <em>Educational Psychologist, 38</em>(1), 23-31.</li>
+    <li>Kirschner, P. A., Sweller, J. et Clark, R. E. (2006). Why minimal guidance during instruction does not work. <em>Educational Psychologist, 41</em>(2), 75-86.</li>
+    <li>Pearson, P. D. et Gallagher, M. C. (1983). The instruction of reading comprehension. <em>Contemporary Educational Psychology, 8</em>(3), 317-344.</li>
+    <li>Rosenshine, B. (2012). Principles of instruction. <em>American Educator, 36</em>(1), 12-19.</li>
+    <li>Sweller, J. (1988). Cognitive load during problem solving. <em>Cognitive Science, 12</em>(2), 257-285.</li>
+    <li>Sweller, J. et Cooper, G. A. (1985). The use of worked examples as a substitute for problem solving in learning algebra. <em>Cognition and Instruction, 2</em>(1), 59-89.</li>
+    <li>Tardif, J. (1992). <em>Pour un enseignement stratégique : l'apport de la psychologie cognitive</em>. Logiques.</li>
+    <li>Vygotski, L. S. (1997). <em>Pensée et langage</em> (F. Sève, trad.). La Dispute. (Ouvrage original publié en 1934.)</li>
+    <li>Wood, D., Bruner, J. S. et Ross, G. (1976). The role of tutoring in problem solving. <em>Journal of Child Psychology and Psychiatry, 17</em>(2), 89-100.</li>
+  </ul>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Carte conceptuelle ---------- */
+var NOEUDS = [
+  {id:"beh",x:150,y:60,t:"Béhaviorisme",s:"Skinner",type:"base",
+   def:"L'apprentissage est une modification observable et durable du comportement, façonnée par ses conséquences : un comportement renforcé tend à se répéter (Pavlov, Watson, Thorndike, puis Skinner et le conditionnement opérant).",
+   sit:"Dominant de 1920 à 1960 environ. Il a inspiré l'enseignement programmé de Skinner et la pédagogie par objectifs, dont les programmes québécois des années 1980 portent la marque. Aujourd'hui, on le retrouve en gestion de classe (renforcement positif) et dans l'enseignement explicite des comportements. On lui reproche de réduire l'apprentissage à l'observable. Les pratiques scolaires coercitives imposées dans les pensionnats autochtones rappellent les dangers d'une éducation centrée sur le contrôle des comportements, sans qu'il faille les confondre avec l'ensemble du courant théorique.",
+   apport:"Découpage en petites étapes, pratique répétée, rétroaction immédiate.",
+   ref:"Bissonnette, Gauthier et Castonguay (2017) ; document du cours sur les perspectives autochtones."},
+  {id:"cog",x:480,y:60,t:"Cognitivisme",s:"Traitement de l'information",type:"base",
+   def:"L'élève sélectionne, encode, stocke et récupère l'information. La mémoire de travail est limitée ; la mémoire à long terme, pratiquement illimitée. Les théories cognitives contemporaines montrent aussi que l'attention et la mémoire sont façonnées par les émotions, le contexte et les relations.",
+   sit:"S'impose à partir des années 1960 (la « révolution cognitive ») en réaction aux limites du béhaviorisme. En éducation, il a mis l'accent sur les stratégies d'apprentissage, la métacognition et le transfert. Au Québec, l'enseignement stratégique de Tardif (1992) l'a fait connaître en formation des maîtres. Il se prolonge aujourd'hui dans les apports des sciences cognitives à l'enseignement (charge cognitive, mémoire, pratique de récupération).",
+   apport:"Présenter peu d'éléments à la fois, réviser régulièrement, viser l'automatisation.",
+   ref:"Tardif (1992) ; document du cours sur les perspectives autochtones (convergences avec le cognitivisme)."},
+  {id:"charge",x:810,y:60,t:"Charge cognitive",s:"Sweller",type:"base",
+   def:"Quand une tâche dépasse la capacité de la mémoire de travail, l'apprentissage s'effondre. La recherche de solution sans guidage impose une charge élevée au novice.",
+   apport:"Le modelage et les exemples travaillés réduisent la charge inutile et libèrent des ressources pour comprendre.",
+   ref:"Sweller (1988) ; Sweller et Cooper (1985)."},
+  {id:"types",x:150,y:210,t:"Types de connaissances",s:"Tardif",type:"base",
+   def:"Connaissances déclaratives (le quoi), procédurales (le comment) et conditionnelles (le quand et le pourquoi).",
+   apport:"Orientent ce qu'on modélise : la procédure, la stratégie ou la façon de raisonner (voir la section 1).",
+   ref:"Tardif (1992)."},
+  {id:"meta",x:810,y:210,t:"Métacognition",s:"Flavell",type:"base",
+   def:"Connaissance et régulation de ses propres processus de pensée.",
+   apport:"La pensée à voix haute rend observable la métacognition de l'expert ; l'objectivation la développe chez l'élève.",
+   ref:"Flavell (1979)."},
+  {id:"socio",x:150,y:370,t:"Socioconstructivisme",s:"ZPD, étayage, transfert",type:"socio",
+   def:"Zone proximale de développement (Vygotski) : ce que l'élève réussit avec de l'aide. Étayage (Wood, Bruner et Ross) : un soutien ajusté puis retiré. Transfert graduel de la responsabilité (Pearson et Gallagher) : je fais, nous faisons, tu fais. Compagnonnage cognitif (Collins, Brown et Newman) : modeler, accompagner, étayer, retirer le soutien, appliqué aux processus de pensée.",
+   sit:"Les travaux de Vygotski datent des années 1930, mais ils ont été largement diffusés en Occident à partir des années 1960 et 1970. Le courant met l'accent sur le rôle des interactions sociales et de la culture dans l'apprentissage. Au Québec, il est l'une des assises du Programme de formation de l'école québécoise (début des années 2000) et inspire l'apprentissage coopératif et les pratiques d'étayage.",
+   apport:"Inspire directement la pratique guidée et la progression vers l'autonomie.",
+   ref:"Vygotski (1934/1997) ; Wood et al. (1976) ; Pearson et Gallagher (1983) ; Collins et al. (1989)."},
+  {id:"renv",x:810,y:370,t:"Effet de renversement",s:"lié à l'expertise",type:"nuance",
+   def:"Un guidage qui aide le novice devient redondant, voire nuisible, pour l'élève déjà compétent.",
+   apport:"Limite la pertinence de l'enseignement explicite : on retire le soutien à mesure que l'expertise se développe (voir la section 2).",
+   ref:"Kalyuga, Ayres, Chandler et Sweller (2003)."},
+  {id:"auto",x:150,y:520,t:"Pédagogies autochtones",s:"Observation, modelage, relation",type:"dr",
+   def:"Certaines traditions éducatives autochtones donnent une grande place à l'observation prolongée, à l'accompagnement, à l'entraide et aux responsabilités envers la communauté et le territoire. Elles sont diverses et ne se ramènent pas à un modèle unique. Les politiques d'assimilation et les pratiques scolaires coercitives imposées dans les pensionnats ont provoqué de profondes ruptures dans leur transmission.",
+   sit:"Longtemps exclues de l'école, et réprimées dans les pensionnats, ces pédagogies sont aujourd'hui reconnues dans la formation à l'enseignement, dans une perspective de réconciliation et de partenariat avec les communautés.",
+   apport:"Se rapprochent du modelage (apprendre en observant un modèle), mais s'en distinguent : rapport au temps, verbalisation moins centrale, savoir ancré dans la relation plutôt que découpé en objectifs.",
+   ref:"Document du cours sur les perspectives autochtones ; Bousquet et Karl (2019) ; Dion et al. (2016)."},
+  {id:"constr",x:480,y:520,t:"Découverte peu guidée",s:"À distinguer du constructivisme",type:"oppo",
+   def:"Le constructivisme propose que l'élève construise ses connaissances en agissant sur les objets et en réorganisant ses conceptions. Certaines formes de découverte accordent peu de guidage, mais le constructivisme ne se réduit pas à cette option : une activité constructiviste peut être étayée.",
+   sit:"Issu notamment des travaux de Piaget, le constructivisme a nourri les pédagogies actives et le renouveau pédagogique québécois, aux côtés du socioconstructivisme. Bruner a également étudié l'apprentissage par découverte, qui peut être accompagné.",
+   apport:"Le contraste porte ici sur le degré de guidage fourni aux novices, non sur une opposition absolue entre constructivisme et enseignement explicite.",
+   ref:"Piaget ; Bruner ; Kirschner et al. (2006) ; Hmelo-Silver et al. (2007)."},
+  {id:"debat",x:810,y:520,t:"Débat sur le guidage",s:"Kirschner / Hmelo-Silver",type:"nuance",
+   def:"Kirschner, Sweller et Clark soulignent les limites du guidage minimal chez les novices. Hmelo-Silver, Duncan et Chinn répondent que l'apprentissage par problèmes et l'investigation bien conçus sont, eux aussi, fortement étayés.",
+   apport:"Nuance l'opposition : la vraie question est la présence ou l'absence de guidage, pas le choix d'un modèle contre un autre.",
+   ref:"Kirschner et al. (2006) ; Hmelo-Silver et al. (2007)."},
+  {id:"ee",x:480,y:300,t:"Enseignement explicite",s:"Modelage, pratique guidée, autonome",type:"centre",
+   def:"Un enseignement structuré où l'enseignant rend visibles les connaissances et les processus à apprendre, puis transfère graduellement la responsabilité à l'élève.",
+   apport:"Cœur de la carte : il emprunte au béhaviorisme, au cognitivisme et au socioconstructivisme.",
+   ref:"Gauthier, Bissonnette et Richard (2013) ; Rosenshine (2012)."}
+];
+var STYLE = {
+  base:{fill:"#FFFFFF",stroke:"#385848",t:"#385848",s:"#4E6254",dash:""},
+  socio:{fill:"#FFFFFF",stroke:"#385848",t:"#385848",s:"#4E6254",dash:""},
+  nuance:{fill:"#FFFFFF",stroke:"#526F55",t:"#526F55",s:"#4E6254",dash:"4 3"},
+  oppo:{fill:"#FFFFFF",stroke:"#80634A",t:"#775338",s:"#4E6254",dash:"6 4"},
+  dr:{fill:"#F3F0E6",stroke:"#827456",t:"#615A44",s:"#615A44",dash:""},
+  centre:{fill:"#385848",stroke:"#385848",t:"#FFFFFF",s:"#ECF3EB",dash:""}
+};
+var NS="http://www.w3.org/2000/svg";
+var gN=document.getElementById("noeuds");
+var bulle=document.getElementById("bulle");
+var conteneur=bulle.parentNode;
+var dernierNoeud=null;
+function fermerBulle(){bulle.hidden=true;Array.prototype.forEach.call(gN.querySelectorAll(".noeud"),function(x){x.classList.remove("choisi");});if(dernierNoeud)dernierNoeud.focus();}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!bulle.hidden)fermerBulle();});
+function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+NOEUDS.forEach(function(n){
+  var st=STYLE[n.type], w=n.type==="centre"?250:210, h=n.type==="centre"?66:56;
+  var g=el("g",{"class":"noeud",tabindex:"0",role:"button","aria-label":n.t+" : afficher la définition"});
+  g.appendChild(el("rect",{x:n.x-w/2,y:n.y-h/2,width:w,height:h,rx:10,fill:st.fill,stroke:st.stroke,"stroke-width":"1.6","stroke-dasharray":st.dash}));
+  var t1=el("text",{x:n.x,y:n.y-6,"text-anchor":"middle","font-size":n.type==="centre"?"16":"14.5","font-weight":"600",fill:st.t});t1.textContent=n.t;
+  var t2=el("text",{x:n.x,y:n.y+14,"text-anchor":"middle","font-size":"12.5",fill:st.s});t2.textContent=n.s;
+  g.appendChild(t1);g.appendChild(t2);
+  function choisir(){
+    Array.prototype.forEach.call(gN.querySelectorAll(".noeud"),function(x){x.classList.remove("choisi");});
+    g.classList.add("choisi");
+    dernierNoeud=g;
+    bulle.innerHTML="<button type='button' class='fermer' aria-label='Fermer la fiche'>×</button><h3>"+n.t+"</h3>"+
+      "<p><span class='rub'>Définition.</span> "+n.def+"</p>"+
+      (n.sit?"<p><span class='rub'>Dans l'enseignement.</span> "+n.sit+"</p>":"")+
+      "<p><span class='rub'>Lien avec l'enseignement explicite.</span> "+n.apport+"</p>"+
+      "<p style='color:var(--texte2);font-size:.88rem;margin-bottom:0'><strong>Références.</strong> "+n.ref+"</p>";
+    bulle.querySelector(".fermer").addEventListener("click",fermerBulle);
+    bulle.hidden=false;
+    var cr=conteneur.getBoundingClientRect(), nr=g.getBoundingClientRect();
+    if(cr.width<720){bulle.classList.add("dessous");bulle.style.left="";bulle.style.top="";return;}
+    bulle.classList.remove("dessous");
+    var bw=bulle.offsetWidth, gauche;
+    if(nr.right-cr.left+12+bw<=cr.width){gauche=nr.right-cr.left+12;}
+    else if(nr.left-cr.left-12-bw>=0){gauche=nr.left-cr.left-12-bw;}
+    else{gauche=Math.max(8,(cr.width-bw)/2);}
+    var haut=nr.top-cr.top;
+    var maxHaut=Math.max(8,conteneur.offsetHeight-bulle.offsetHeight-8);
+    bulle.style.left=gauche+"px";
+    bulle.style.top=Math.min(Math.max(8,haut),maxHaut)+"px";
+  }
+  g.addEventListener("click",choisir);
+  g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();choisir();}});
+  gN.appendChild(g);
+});
+var liste=document.getElementById("carte-texte");
+NOEUDS.forEach(function(n){var li=document.createElement("li");li.innerHTML="<strong>"+n.t+"</strong> : "+n.def+(n.sit?" <em>Dans l'enseignement :</em> "+n.sit:"")+" <em>Lien avec l'enseignement explicite :</em> "+n.apport;liste.appendChild(li);});
+var liens=document.createElement("li");
+liens.innerHTML="<strong>Relations principales</strong> : le béhaviorisme, le cognitivisme et la théorie de la charge cognitive contribuent aux fondements de l'enseignement explicite ; les types de connaissances orientent ce qu'on modélise ; la métacognition est rendue visible par la pensée à voix haute ; les travaux sur l'étayage inspirent la pratique guidée ; l'effet de renversement oriente l'ajustement du guidage ; la découverte peu guidée contraste avec l'enseignement explicite, sans résumer le constructivisme ; certaines traditions pédagogiques autochtones donnent une place centrale à l'observation et aux relations ; les politiques d'assimilation ont causé des ruptures dans leur transmission.";
+liste.appendChild(liens);
+
+/* ---------- Sommets du triangle de Houssaye ---------- */
+var gS=document.getElementById("sommets");
+[115,265,415,565].forEach(function(cx,i){
+  [["S",cx,60],["E",cx-55,160],["É",cx+55,160]].forEach(function(v){
+    var retrait=(i===2&&v[0]==="E");
+    gS.appendChild(el("circle",{cx:v[1],cy:v[2],r:14,fill:"#FFFFFF",stroke:retrait?"#9AAB9D":"#385848","stroke-width":"1.6","stroke-dasharray":retrait?"3 3":""}));
+    var t=el("text",{x:v[1],y:v[2]+5,fill:retrait?"#69796C":"#385848"});t.textContent=v[0];gS.appendChild(t);
+  });
+});
+
+/* ---------- Quiz à choix ---------- */
+var QUIZ={
+  familles:{options:["Procédure","Stratégie cognitive","Façon de raisonner"],items:[
+    {q:"Simplifier une fraction en divisant le numérateur et le dénominateur par un diviseur commun.",ok:0,f:"Une suite d'actions ordonnées qui mène à un résultat prévisible : c'est une procédure. On n'oublie pas d'en enseigner le pourquoi."},
+    {q:"Inférer le sens d'un mot inconnu à l'aide des indices du texte.",ok:1,f:"L'élève choisit ce moyen quand il bloque sur un mot, et rien ne garantit le résultat : c'est une stratégie cognitive. Le quand et le pourquoi sont au cœur de son enseignement."},
+    {q:"Justifier une explication à l'aide des données d'une expérience.",ok:2,f:"On relie une affirmation à des preuves selon les critères de validité de la science : c'est une façon de raisonner."},
+    {q:"Calculer la fraction d'une population en plaçant la partie au numérateur et le tout au dénominateur.",ok:0,f:"Les étapes sont fixes et le résultat est prévisible : c'est une procédure."},
+    {q:"Se faire une image mentale pour mieux comprendre un passage difficile.",ok:1,f:"C'est un moyen choisi par l'élève pour atteindre un but de compréhension, selon le contexte : une stratégie cognitive."},
+    {q:"Distinguer une hypothèse d'une conclusion.",ok:2,f:"C'est le statut de l'énoncé, et donc sa validité, qui est en jeu : une façon de raisonner propre à la science."},
+    {q:"Lire une température sur un thermomètre.",ok:0,f:"Une suite d'actions précises et un résultat attendu : une procédure, souvent mobilisée au service d'un raisonnement."},
+    {q:"Décider de relire un paragraphe quand on perd le fil.",ok:1,f:"La décision dépend de l'autorégulation de l'élève (je ne comprends plus, donc je relis) : une stratégie cognitive."},
+    {q:"Comparer deux situations en ne changeant qu'un seul facteur.",ok:2,f:"C'est le principe du contrôle des variables : sans lui, on ne peut pas attribuer un effet à une cause. Une façon de raisonner."}
+  ]},
+  quand:{options:["Enseignement explicite","Un autre modèle","Combiner les deux"],items:[
+    {q:"Des élèves rencontrent pour la première fois la simplification des fractions.",ok:0,f:"Élèves novices, procédure avec des étapes peu découvrables : l'enseignement explicite est tout indiqué."},
+    {q:"Des élèves qui maîtrisent déjà les fractions équivalentes veulent créer un jeu de cartes pour les élèves de 1re année.",ok:1,f:"Les élèves sont compétents : un guidage serré serait redondant (effet de renversement lié à l'expertise). L'apprentissage par projets convient mieux."},
+    {q:"Une classe mène une investigation sur la fonte de la neige dans la cour, mais plusieurs élèves ne savent pas encore justifier une explication à l'aide de données.",ok:2,f:"L'investigation reste la visée, mais une mini-leçon explicite sur la façon de raisonner (justifier à partir des données) permettra à tous d'y participer."},
+    {q:"Une classe lit un album contenant des mots peu familiers, notamment en inuktitut, et plusieurs élèves peinent à utiliser les indices du texte.",ok:0,f:"Le modelage peut rendre visible une stratégie d'inférence, avec pratique guidée et options CUA. Pour les mots en inuktitut, on vérifie toutefois le sens à l'aide d'un lexique fiable : les indices ne suffisent pas toujours."},
+    {q:"L'objectif est de développer l'écoute et le dialogue autour d'un enjeu qui touche la communauté.",ok:1,f:"L'objectif est d'abord relationnel et citoyen : un modèle coopératif ou expérientiel convient mieux. Certaines habiletés (reformuler, attendre son tour) pourraient tout de même faire l'objet d'une courte mini-leçon."},
+    {q:"Des élèves de 6e année réalisent un projet de recherche, et plusieurs ne savent pas comment prendre des notes à partir d'une source.",ok:2,f:"On garde le projet, et on insère une mini-leçon explicite sur la prise de notes au moment où les élèves en ont besoin."}
+  ]},
+  relance:{items:[
+    {q:"Un élève s'exclame : « Le glaçon disparaît! »",options:["« Non, il ne disparaît pas, il fond. »","« Exactement, bravo! »","« Est-ce qu'il disparaît vraiment? Qu'est-ce qu'on voit dans l'assiette maintenant? »","« On verra ça plus tard. »"],ok:2,
+     fb:["Vous corrigez à la place de l'élève : la conception erronée n'est pas travaillée, et la relation au savoir revient à l'enseignante.","Vous validez une conception erronée sur la conservation de la matière.","Vous relancez à partir de l'observation : l'élève peut lui-même constater que la glace devient de l'eau. C'est le raisonnement qu'on veut développer.","Vous laissez passer une conception erronée qui pourrait s'installer."]},
+    {q:"Une élève propose : « Il va fondre plus vite au chaud! »",options:["« Exactement! »","« C'est une hypothèse intéressante. Je l'écris au tableau : comment pourrait-on la vérifier? »","« Non, pas forcément. »"],ok:1,
+     fb:["Vous transformez une hypothèse en conclusion avant même l'expérience : la démarche perd sa raison d'être.","Vous nommez le statut de l'énoncé (une hypothèse), vous le gardez visible et vous annoncez qu'on le vérifiera : la démarche prend tout son sens.","Vous fermez la discussion sans donner les moyens de vérifier."]},
+    {q:"Pendant la pratique guidée, un élève demande : « C'est quoi la réponse? »",options:["Donner la réponse pour ne pas bloquer l'élève.","« À quelle étape es-tu? Regarde l'aide-mémoire : qu'est-ce que tu as déjà trouvé? »","Refaire tout le modelage devant la classe."],ok:1,
+     fb:["L'élève n'apprend pas à mobiliser la démarche : c'est l'enseignante qui fait le travail.","Vous étayez : l'élève reprend le contrôle de sa démarche, avec l'aide-mémoire comme soutien.","Un deuxième modelage bloque le triangle sur « enseigner » : on cible plutôt l'étape qui pose problème."]}
+  ]}
+};
+function construireQuiz(cont,cfg,nom){
+  cfg.items.forEach(function(it,i){
+    var opts=it.options||cfg.options;
+    var d=document.createElement("div");d.className="item";
+    var p=document.createElement("p");p.className="enonce";p.id=nom+"-q"+i;p.textContent=(i+1)+". "+it.q;d.appendChild(p);
+    var grp=document.createElement("div");grp.setAttribute("role","group");grp.setAttribute("aria-labelledby",p.id);
+    var r=document.createElement("div");r.setAttribute("aria-live","polite");
+    opts.forEach(function(o,j){
+      var b=document.createElement("button");b.className="btn";b.type="button";b.textContent=o;b.setAttribute("aria-pressed","false");
+      b.addEventListener("click",function(){
+        Array.prototype.forEach.call(grp.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false");});
+        b.setAttribute("aria-pressed","true");
+        var bon=(j===it.ok);
+        var txt=it.fb?it.fb[j]:it.f;
+        r.innerHTML="<div class='retro "+(bon?"ok":"nok")+"'><span class='marq'>"+(bon?"✓ Juste. ":"✗ À revoir. ")+"</span>"+(bon||it.fb?txt:"Pensez à la nature de l'objet : est-il fixe, choisi selon le contexte, ou régi par des critères de validité? Réessayez.")+"</div>";
+      });
+      grp.appendChild(b);
+    });
+    d.appendChild(grp);d.appendChild(r);cont.appendChild(d);
+  });
+}
+Array.prototype.forEach.call(document.querySelectorAll("[data-quiz]"),function(c){var n=c.getAttribute("data-quiz");construireQuiz(c,QUIZ[n],n);});
+
+/* ---------- Phases (onglets) ---------- */
+var PHASES=[
+ {n:"Mise en situation",rel:"Installer le sens (relation pédagogique)",
+  did:["Cerner l'objet d'apprentissage : procédure, stratégie ou façon de raisonner.","Choisir une situation qui fait émerger le besoin de cet objet.","Repérer les préalables et les conceptions erronées probables."],
+  ped:["Annoncer l'objectif à l'oral et par écrit, et nommer ce qu'on va modéliser.","Activer les connaissances antérieures, susciter l'intérêt.","Installer un climat où l'erreur est permise."],
+  cog:["Oriente son attention vers ce qui est pertinent.","Récupère en mémoire à long terme les connaissances liées à l'objet.","Se donne un but : il sait ce qu'il va apprendre et à quoi ça sert."],
+  fam:["Montrer qu'il existe une façon fiable et efficace de faire.","Faire vivre un blocage de lecture que la stratégie va résoudre.","Poser une question à investiguer, écrite et dite clairement, qu'on ne peut trancher sans données."],
+  vig:["L'objet n'était pas toujours nommé : les élèves ne savaient pas ce qu'on allait leur montrer.","Le besoin n'était pas créé : pourquoi apprendre cette méthode? On y va en entonnoir, du problème vers l'outil.","Activer les connaissances antérieures ne suffit pas : il faut aussi annoncer."],
+  cua:"Rendre l'objectif visible tout au long de la leçon (affichage, pictogramme) soutient les fonctions exécutives, notamment chez les élèves ayant un TDAH."},
+ {n:"Modelage",rel:"Enseigner (relation didactique)",
+  did:["Découper l'objet en étapes et expliciter le quoi, le comment, le quand et le pourquoi.","Penser à voix haute, y compris les hésitations et les vérifications.","Choisir des exemples contrastés et, si pertinent, un contre-exemple.","Construire l'aide-mémoire au fur et à mesure."],
+  ped:["S'adresser à toute la classe et capter l'attention.","Animer pendant qu'on écrit au tableau.","Terminer en vérifiant la compréhension de tous (ardoises, questions sur le pourquoi)."],
+  cog:["Observe un expert : la charge cognitive est réduite, il n'a pas à chercher la solution.","Commence à encoder une représentation de la démarche et à construire un schéma.","Relie chaque étape à sa justification."],
+  fam:["Rendre visibles les étapes implicites (pourquoi diviser par 6? où trouver le tout?).","Montrer le moment où l'on bloque, les indices retenus et ceux qu'on écarte, et un cas où le contexte ne suffit pas.","Distinguer à voix haute ce que je constate, ce que j'explique et ce qui me permet de le justifier."],
+  vig:["Des étapes restaient implicites : on montrait le comment sans le pourquoi.","Certains indices utiles n'étaient pas relevés, et aucun contre-exemple n'était présenté.","Aucune vérification de la compréhension avant de passer à la pratique.","Le vocabulaire doit être adapté au niveau, mais exact (ex. : la chaleur n'est pas une matière)."],
+  cua:"Modéliser sous plusieurs formes (oral, écrit, visuel, manipulation) et offrir l'aide-mémoire en format papier, illustré et lu à voix haute."},
+ {n:"Pratique guidée",rel:"Former (relation pédagogique)",
+  did:["Proposer des tâches proches du modelage, puis augmenter graduellement la complexité.","Anticiper les erreurs typiques et préparer des relances."],
+  ped:["Faire faire les élèves, seuls ou en dyades, plutôt que de faire à leur place.","Circuler et étayer : « À quelle étape es-tu? Comment le sais-tu? »","Relancer au lieu de répondre ; retirer graduellement le soutien.","Donner une rétroaction immédiate et ciblée."],
+  cog:["Exécute la démarche avec soutien, dans sa zone proximale de développement.","Consolide son schéma et corrige ses erreurs avant qu'elles se fixent.","Commence à s'autoréguler avec l'aide-mémoire."],
+  fam:["Reprendre la même démarche sur un nouvel exemple avant d'ajouter une étape.","Faire appliquer la stratégie jusqu'au bout, validation comprise.","Faire formuler les élèves eux-mêmes, en exigeant la preuve : « Où le vois-tu dans tes données? »"],
+  vig:["Une pratique guidée qui devient un deuxième modelage : il n'y a alors pas de pratique guidée.","Une pratique guidée arrêtée en cours de route : il faut aller jusqu'au bout de la démarche.","Répondre trop vite aux élèves, ou valider une hypothèse comme si c'était une conclusion."],
+  cua:"Offrir des dyades, des rôles, un aide-mémoire à portée de main et des gabarits partiellement remplis pour soutenir l'organisation."},
+ {n:"Pratique autonome",rel:"Apprendre (relation d'apprentissage)",
+  did:["Proposer des tâches variées, dont des tâches de transfert, et des défis gradués.","Viser un taux de réussite élevé avant d'augmenter la difficulté."],
+  ped:["Se mettre en retrait : observer, recueillir des traces, intervenir de façon ciblée.","Gérer le temps et l'organisation : consignes claires, chronomètre, défis pour celles et ceux qui terminent plus vite."],
+  cog:["Mobilise la démarche avec une autonomie intellectuelle croissante ; des outils d'accessibilité peuvent rester disponibles.","Pratique jusqu'à automatiser les procédures et libérer sa mémoire de travail.","Pour une stratégie ou un raisonnement, décide lui-même quand les mobiliser."],
+  fam:["Exercices variés, puis contextes nouveaux.","Un nouveau texte où l'élève doit repérer lui-même quand utiliser la stratégie.","Une nouvelle situation sans questions imposées : l'élève construit et justifie seul son explication."],
+  vig:["Une pratique « autonome » encore encadrée par des questions imposées ressemble plutôt à une pratique guidée.","Un gabarit totalement vide peut générer des erreurs de structure sans rapport avec l'objet évalué.","Une question suggestive (qui contient déjà la réponse) empêche de voir si l'élève sait constater seul."],
+  cua:"Offrir des défis à paliers et un choix dans la façon de répondre (dire, écrire, dessiner), tout en gardant la même cible d'apprentissage."},
+ {n:"Objectivation",rel:"Mise en relation des acquis (lecture proposée pour le cours)",
+  did:["Institutionnaliser le savoir : reformuler ce qui a été appris avec le vocabulaire juste.","Relier le savoir aux critères de réussite et annoncer les réinvestissements."],
+  ped:["Animer un retour collectif à partir des productions des élèves.","Faire verbaliser plusieurs élèves, pas seulement ceux qui lèvent la main.","Valoriser les stratégies plutôt que la seule bonne réponse."],
+  cog:["Prend conscience de ce qu'il a appris et de la manière dont il l'a appris (métacognition).","S'autoévalue par rapport aux critères.","Organise le savoir et le relie à d'autres connaissances, ce qui favorise le transfert."],
+  fam:["« Quelles étapes as-tu suivies? Laquelle était la plus difficile? »","« Quand cette stratégie t'a-t-elle aidé? Quand ne suffisait-elle pas? »","« Qu'est-ce qui te permet d'affirmer ton explication? »"],
+  vig:["Des retours où seuls quelques élèves répondent : que fait-on de ceux qui se taisent?","Partir des réponses des élèves plutôt que de fournir des exemples de réponses tout faits."],
+  cua:"Proposer une autoévaluation illustrée (pictogrammes, échelle visuelle) et plusieurs façons de partager : dire, montrer, écrire."}
+];
+var ong=document.getElementById("onglets-phases"),pan=document.getElementById("panneaux-phases");
+function liste_(a){return "<ul>"+a.map(function(x){return "<li>"+x+"</li>";}).join("")+"</ul>";}
+PHASES.forEach(function(ph,i){
+  var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.id="tab-"+i;b.setAttribute("aria-controls","pan-"+i);b.setAttribute("aria-selected",i===0?"true":"false");b.tabIndex=i===0?0:-1;b.textContent=(i+1)+". "+ph.n;ong.appendChild(b);
+  var p=document.createElement("div");p.className="panneau";p.id="pan-"+i;p.setAttribute("role","tabpanel");p.setAttribute("aria-labelledby","tab-"+i);p.tabIndex=0;if(i!==0)p.hidden=true;
+  p.innerHTML="<p style='margin-top:0;color:var(--texte2)'><strong>Triangle de Houssaye :</strong> "+ph.rel+"</p>"+
+   "<div class='roles'><div class='role'><h4>Enseignant : volet didactique</h4>"+liste_(ph.did)+"</div><div class='role'><h4>Enseignant : volet pédagogique</h4>"+liste_(ph.ped)+"</div><div class='role'><h4>Élève : point de vue cognitif</h4>"+liste_(ph.cog)+"</div></div>"+
+   "<h4>Selon la famille</h4><div class='grille3'><div class='fam p'><span class='etiq p'>Procédure</span><p style='margin-bottom:0'>"+ph.fam[0]+"</p></div><div class='fam s'><span class='etiq s'>Stratégie</span><p style='margin-bottom:0'>"+ph.fam[1]+"</p></div><div class='fam r'><span class='etiq r'>Raisonnement</span><p style='margin-bottom:0'>"+ph.fam[2]+"</p></div></div>"+
+   "<div class='encadre vigil'><div class='tete'><span aria-hidden='true'>!</span> Ce qu'on a observé en animation</div>"+liste_(ph.vig)+"</div>"+
+   "<div class='encadre cua'><div class='tete'>Repère CUA</div>"+ph.cua+"</div>"+
+   (i===1?"<div class='encadre dr'><div class='tete'>Double regard</div>Apprendre en observant un modèle est au cœur de plusieurs pédagogies autochtones. Mais l'observation y est souvent prolongée, silencieuse et ancrée dans une relation de confiance, alors que le modelage scolaire est bref et fortement verbalisé. Prévoir du temps pour observer et refaire, sans tout verbaliser, peut être une façon de reconnaître cette autre manière d'apprendre.</div>":"");
+  pan.appendChild(p);
+});
+var tabs=ong.querySelectorAll("[role=tab]");
+function activer(i){
+  Array.prototype.forEach.call(tabs,function(t,k){t.setAttribute("aria-selected",k===i?"true":"false");t.tabIndex=k===i?0:-1;document.getElementById("pan-"+k).hidden=(k!==i);});
+  tabs[i].focus();
+}
+Array.prototype.forEach.call(tabs,function(t,i){
+  t.addEventListener("click",function(){activer(i);});
+  t.addEventListener("keydown",function(e){
+    if(e.key==="ArrowRight"){e.preventDefault();activer((i+1)%tabs.length);}
+    if(e.key==="ArrowLeft"){e.preventDefault();activer((i-1+tabs.length)%tabs.length);}
+  });
+});
+
+/* ---------- Ordre des phases ---------- */
+var BON=["Mise en situation","Modelage","Vérification de la compréhension","Pratique guidée","Pratique autonome","Objectivation"];
+var ordre=["Pratique guidée","Objectivation","Modelage","Pratique autonome","Mise en situation","Vérification de la compréhension"];
+var lo=document.getElementById("liste-ordre"),ro=document.getElementById("retro-ordre");
+function rendreOrdre(focusIdx,dir){
+  lo.innerHTML="";
+  ordre.forEach(function(n,i){
+    var li=document.createElement("li");
+    li.innerHTML="<span class='nom'>"+(i+1)+". "+n+"</span>";
+    var h=document.createElement("button");h.type="button";h.textContent="↑";h.setAttribute("aria-label","Monter "+n);h.disabled=(i===0);
+    var b=document.createElement("button");b.type="button";b.textContent="↓";b.setAttribute("aria-label","Descendre "+n);b.disabled=(i===ordre.length-1);
+    h.addEventListener("click",function(){var t=ordre[i-1];ordre[i-1]=ordre[i];ordre[i]=t;ro.innerHTML="";rendreOrdre(i-1,"h");});
+    b.addEventListener("click",function(){var t=ordre[i+1];ordre[i+1]=ordre[i];ordre[i]=t;ro.innerHTML="";rendreOrdre(i+1,"b");});
+    li.appendChild(h);li.appendChild(b);lo.appendChild(li);
+  });
+  if(focusIdx!==undefined){var bts=lo.children[focusIdx].querySelectorAll("button");var cible=dir==="h"?bts[0]:bts[1];if(cible.disabled)cible=dir==="h"?bts[1]:bts[0];cible.focus();}
+}
+rendreOrdre();
+document.getElementById("verif-ordre").addEventListener("click",function(){
+  var bien=ordre.filter(function(n,i){return n===BON[i];}).length;
+  if(bien===BON.length){ro.innerHTML="<div class='retro ok'><span class='marq'>✓ Juste. </span>Notez que la vérification de la compréhension, souvent oubliée en animation, fait le pont entre le modelage et la pratique guidée.</div>";}
+  else{ro.innerHTML="<div class='retro nok'><span class='marq'>✗ À revoir. </span>"+bien+" phase(s) sur "+BON.length+" sont à la bonne place. Indice : on ne transfère la responsabilité à l'élève qu'après avoir vérifié qu'il a compris.</div>";}
+});
+
+/* ---------- Alignement ---------- */
+var ETAPES=["1. Repérer les nombres utiles","2. Écrire la fraction","3. Trouver un diviseur commun","4. Diviser le numérateur et le dénominateur","5. Vérifier que c'est simplifié au maximum"];
+var CRIT=[
+  {c:"Explique pourquoi 6 et 30 peuvent tous deux être divisés par 6.",ok:2},
+  {c:"Encercle, dans le document, la population de la ville et la population totale.",ok:0},
+  {c:"Montre qu'il n'existe plus de diviseur commun autre que 1.",ok:4},
+  {c:"Place la partie au numérateur et le tout au dénominateur.",ok:1},
+  {c:"Applique la même division au numérateur et au dénominateur.",ok:3}
+];
+var la=document.getElementById("liste-align"),ra=document.getElementById("retro-align");
+CRIT.forEach(function(k,i){
+  var d=document.createElement("div");d.className="item";
+  var lab=document.createElement("label");lab.setAttribute("for","al-"+i);lab.className="enonce";lab.style.display="block";lab.textContent="Manifestation : « "+k.c+" »";
+  var s=document.createElement("select");s.id="al-"+i;
+  s.innerHTML="<option value=''>Choisir l'étape…</option>"+ETAPES.map(function(e,j){return "<option value='"+j+"'>"+e+"</option>";}).join("");
+  var err=document.createElement("div");err.className="erreur";err.id="al-err-"+i;
+  s.setAttribute("aria-describedby",err.id);
+  s.addEventListener("change",function(){err.textContent="";});
+  d.appendChild(lab);d.appendChild(s);d.appendChild(err);la.appendChild(d);
+});
+document.getElementById("verif-align").addEventListener("click",function(){
+  var manque=false,bien=0;
+  CRIT.forEach(function(k,i){
+    var s=document.getElementById("al-"+i),err=document.getElementById("al-err-"+i);
+    if(s.value===""){err.textContent="Choisissez une étape pour ce critère.";manque=true;}
+    else if(parseInt(s.value,10)===k.ok){bien++;}
+  });
+  if(manque){ra.innerHTML="<p class='erreur'>Associez chaque manifestation à une étape avant de vérifier.</p>";return;}
+  if(bien===CRIT.length){ra.innerHTML="<div class='retro ok'><span class='marq'>✓ Juste. </span>Chaque manifestation renseigne sur une étape. Les critères de réussite permettent ensuite de juger la qualité de la procédure dans son ensemble, et les manifestations guident l'observation et la rétroaction.</div>";}
+  else{ra.innerHTML="<div class='retro nok'><span class='marq'>✗ À revoir. </span>"+bien+" association(s) sur "+CRIT.length+" sont justes. Demandez-vous : à quel moment de la démarche l'élève fait-il ce que décrit le critère?</div>";}
+});
+
+/* ---------- Liste de vérification ---------- */
+var COCHE=[
+  "J'ai identifié la nature de l'objet : procédure, stratégie cognitive ou façon de raisonner.",
+  "J'ai justifié le choix de l'enseignement explicite (élèves novices, objet complexe ou invisible).",
+  "Ma mise en situation nomme ce que je vais modéliser et fait émerger le besoin.",
+  "Mon modelage rend visibles les étapes implicites et leur pourquoi.",
+  "J'ai prévu des exemples contrastés et, si pertinent, un contre-exemple.",
+  "Je vérifie la compréhension de tous avant la pratique guidée.",
+  "Ma pratique guidée fait faire les élèves, avec étayage, jusqu'au bout de la démarche.",
+  "Ma pratique autonome exige une activité intellectuelle autonome, avec les aides d'accessibilité nécessaires.",
+  "J'ai préparé des relances plutôt que des réponses.",
+  "Mes critères de réussite et mes manifestations observables sont cohérents avec les opérations modélisées.",
+  "J'ai prévu une façon de faire participer les élèves qui ne lèvent pas la main.",
+  "J'ai intégré au moins une option CUA par principe (représentation, action et expression, engagement).",
+  "J'ai vérifié l'exactitude du vocabulaire et du matériel (tableaux, données)."
+];
+var lc=document.getElementById("liste-coche"),cc=document.getElementById("compte-coche");
+COCHE.forEach(function(c,i){
+  var l=document.createElement("label");
+  l.innerHTML="<input type='checkbox' id='ck-"+i+"'> <span>"+c+"</span>";
+  lc.appendChild(l);
+});
+function maj(){var n=lc.querySelectorAll("input:checked").length;cc.textContent=n+" élément(s) sur "+COCHE.length+" sont prévus dans ma séquence.";}
+lc.addEventListener("change",maj);maj();
+
+/* ---------- Menu actif ---------- */
+var liensMenu=document.querySelectorAll("nav.menu a");
+if("IntersectionObserver" in window){
+  var obs=new IntersectionObserver(function(ents){
+    ents.forEach(function(e){if(e.isIntersecting){Array.prototype.forEach.call(liensMenu,function(a){a.classList.toggle("actif",a.getAttribute("href")==="#"+e.target.id);});}});
+  },{rootMargin:"-30% 0px -60% 0px"});
+  Array.prototype.forEach.call(document.querySelectorAll("main section"),function(s){obs.observe(s);});
+}
+
+/* ---------- Menu mobile et progression de lecture ---------- */
+var menuMobile=document.getElementById("mobile-menu");
+var nav=document.querySelector("nav.menu");
+menuMobile.addEventListener("click",function(){
+  var estOuvert=nav.classList.toggle("ouvert");
+  menuMobile.setAttribute("aria-expanded",String(estOuvert));
+  menuMobile.textContent=estOuvert?"✕ Fermer":"☰ Menu";
+});
+Array.prototype.forEach.call(nav.querySelectorAll("ol a"),function(a){
+  a.addEventListener("click",function(){
+    nav.classList.remove("ouvert");
+    menuMobile.setAttribute("aria-expanded","false");
+    menuMobile.textContent="☰ Menu";
+  });
+});
+var barre=document.getElementById("progression-barre");
+var progresser=function(){
+  var hauteur=document.documentElement.scrollHeight-window.innerHeight;
+  barre.style.width=(hauteur>0?Math.min(100,Math.max(0,window.scrollY/hauteur*100)):100)+"%";
+};
+window.addEventListener("scroll",progresser,{passive:true});
+window.addEventListener("resize",progresser);
+progresser();
+})();
+</script>
+</body>
+</html>

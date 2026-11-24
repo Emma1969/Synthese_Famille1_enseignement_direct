@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>L'enseignement explicite — synthèse interactive | 3PDG260</title>
-<meta name="description" content="Une synthèse interactive de l'enseignement explicite : fondements, objets d'apprentissage, phases, choix pédagogiques et évaluation formative. Cours 3PDG260.">
+<title>Famille 1 — Enseignement explicite | Guide de révision 3PDG260</title>
+<meta name="description" content="Un guide autonome de révision de la famille 1 : reconnaître, justifier, analyser l'activité cognitive des élèves, juger l'alignement et réguler l'enseignement explicite.">
 <meta name="theme-color" content="#385848">
 <style>
 :root{
@@ -161,6 +161,23 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
 .entree-reflexion textarea{width:100%;min-height:108px;resize:vertical;background:#fff;color:var(--texte);font:inherit;border:1px solid #B8C9B8;border-radius:10px;padding:.7rem .85rem;line-height:1.5}
 .entree-reflexion textarea:focus-visible{outline:3px solid #8FAE96;outline-offset:1px}
 .note-privee{font-size:.88rem;color:var(--texte2)}
+.revision-intro{display:flex;flex-wrap:wrap;gap:.55rem;margin:.8rem 0 1.2rem}
+.revision-intro span{display:inline-block;background:#ECF3EB;color:#385848;border:1px solid #BDD1BE;border-radius:999px;padding:.24rem .7rem;font-size:.85rem;font-weight:650}
+.revision-cas{background:#fff;border:1px solid #C7D6C5;border-radius:14px;padding:1rem 1.3rem;margin:1rem 0}
+.revision-cas ol{padding-left:1.5rem;margin:.4rem 0}
+.revision-cas li{padding:.3rem 0 .35rem .3rem}
+.revision-etape{background:#fff;border:1px solid var(--bordure);border-radius:13px;padding:1.2rem 1.3rem;margin:1.1rem 0}
+.revision-etape h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.revision-etape textarea{width:100%;min-height:105px;resize:vertical;border:1px solid #AEBFAF;border-radius:9px;padding:.7rem .8rem;color:var(--texte);font:inherit;line-height:1.5}
+.revision-etape label.prompt{display:block;font-weight:600;margin:.55rem 0 .5rem}
+.revision-verif{background:#F5F8F3;border:1px solid #D6E0D3;border-radius:10px;padding:.8rem 1rem;margin:1rem 0}
+.revision-verif p{font-weight:650;color:var(--encre);margin:0 0 .35rem}
+.revision-verif label{display:flex;align-items:flex-start;gap:.55rem;padding:.24rem 0;font-size:.93rem}
+.revision-verif input{width:1.1rem;height:1.1rem;margin-top:.22rem;accent-color:var(--inter);flex-shrink:0}
+.revision-pied{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1rem}
+.revision-compteur{font-weight:700;color:var(--encre);margin:.3rem 0}
+.revision-avertissement{font-size:.88rem;color:var(--texte2);margin:.5rem 0}
+.revision-etape details{background:#F8FBF7}
 @media (max-width:860px){
   .mise{grid-template-columns:1fr}
   nav.menu{position:static;height:auto;padding:1rem 1rem .8rem}
@@ -191,6 +208,8 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
   body{background:#fff}
   .intro-hero{border:0;padding:.5rem 0;background:#fff}
   .panneau[hidden]{display:block!important}
+  .revision-etape textarea{min-height:52px}
+  .revision-etape details>*{display:block}
 }
 </style>
 </head>
@@ -202,7 +221,7 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
 <nav class="menu" aria-label="Sections du guide">
   <button type="button" class="mobile-menu" id="mobile-menu" aria-expanded="false" aria-controls="liens-navigation">☰ Menu</button>
   <p class="titre-guide">3PDG260 · Approches pédagogiques</p>
-  <h2>Guide de l'enseignement explicite</h2>
+  <h2>Famille 1 · Enseignement explicite</h2>
   <ol id="liens-navigation">
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#fondements">0. Fondements théoriques</a></li>
@@ -210,6 +229,7 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
     <li><a href="#quand">2. Quand choisir l'enseignement explicite?</a></li>
     <li><a href="#comment">3. Comment le mener?</a></li>
     <li><a href="#evaluer">4. Quoi, quand et comment évaluer?</a></li>
+    <li><a href="#revision">5. M'entraîner pour l'examen</a></li>
     <li><a href="#cloture">Aide-mémoire et références</a></li>
   </ol>
   <div class="legende-menu" aria-label="Légende des couleurs">
@@ -225,19 +245,20 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
 <!-- ===================== ACCUEIL ===================== -->
 <section id="accueil" aria-labelledby="t-accueil">
   <div class="intro-hero">
-    <p class="sur-titre">3PDG260 · Synthèse interactive</p>
+    <p class="sur-titre">3PDG260 · Guide de révision · Famille 1</p>
     <h1 id="t-accueil">L'enseignement explicite, du choix du modèle à la régulation des apprentissages</h1>
-    <p class="chapeau">Une synthèse de nos animations sur la famille de l'enseignement direct. Retrouvez les fondements, les décisions de planification et les observations faites en classe pour concevoir vos propres séquences.</p>
+    <p class="chapeau">Une synthèse de nos animations sur la famille de l'enseignement structuré et direct, suivie d'un entraînement autonome. Révisez les concepts, puis exercez-vous à construire un jugement à partir d'une situation nouvelle.</p>
     <div class="actions-accueil">
       <a class="action principale" href="#comment">Explorer les phases</a>
+      <a class="action" href="#revision">M'entraîner en autonomie</a>
       <a class="action" href="#cloture">Consulter l'aide-mémoire</a>
     </div>
   </div>
-  <p class="note-lecture">Repérez les activités ✎ : prenez position avant d'afficher les rétroactions ou les pistes d'analyse. Le guide fonctionne aussi hors connexion.</p>
+  <p class="note-lecture">Pour réviser seul·e : explorez d'abord les exemples, répondez aux activités ✎, puis vérifiez votre raisonnement. Les corrigés proposent des pistes, pas des réponses uniques. Ce fichier fonctionne hors connexion.</p>
   <div class="parcours" aria-label="Trois entrées dans le guide">
     <a href="#fondements"><strong>Je veux comprendre</strong><span>Fondements théoriques et distinction entre les objets d'apprentissage.</span></a>
     <a href="#quand"><strong>Je dois choisir et planifier</strong><span>Pertinence du modèle, phases, rôles de l'enseignant et activité de l'élève.</span></a>
-    <a href="#evaluer"><strong>Je veux observer les apprentissages</strong><span>Critères de réussite, manifestations observables et régulation.</span></a>
+    <a href="#revision"><strong>Je veux m'entraîner pour l'examen</strong><span>Cas inédit, réponses à rédiger, rétroactions et autoévaluation du raisonnement.</span></a>
   </div>
 
   <div class="activite" id="act-diagnostic">
@@ -253,6 +274,7 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
       <li><strong>Justifier</strong> le choix de l'enseignement explicite (ou d'un autre modèle) selon l'objet d'apprentissage et le profil des élèves.</li>
       <li><strong>Planifier</strong> les phases d'un enseignement explicite en précisant le rôle de l'enseignant et l'activité cognitive de l'élève.</li>
       <li><strong>Concevoir</strong> des critères de réussite et des outils d'évaluation formative alignés sur les apprentissages visés.</li>
+      <li><strong>Analyser et justifier</strong> une décision à partir d'indices d'une situation, sans réduire le jugement pédagogique à une liste de caractéristiques.</li>
     </ol>
   </div>
 
@@ -740,6 +762,125 @@ summary{cursor:pointer;font-weight:600;color:var(--encre)}
   <a class="haut" href="#contenu">Retour en haut</a>
 </section>
 
+<!-- ===================== RÉVISION AUTONOME ===================== -->
+<section id="revision" aria-labelledby="t-revision">
+  <span class="chap-num">05 · Parcours d'entraînement</span>
+  <h2 id="t-revision">Réviser en autonomie : analyser une pratique plutôt que réciter le modèle</h2>
+  <p>Cette partie vous prépare aux <strong>types de raisonnements</strong> mobilisés dans l'évaluation finale : reconnaître une approche, mettre en relation des indices et des cadres théoriques, apprécier sa pertinence, examiner des traces d'apprentissage et justifier une décision. <strong>Il ne s'agit pas de la vignette de l'examen.</strong></p>
+  <div class="revision-intro" aria-label="Repères de l'entraînement">
+    <span>Environ 25 à 30 minutes</span><span>5 étapes indépendantes</span><span>Réponses personnelles</span><span>Pistes de rétroaction à dévoiler</span>
+  </div>
+  <p class="note-methode"><strong>Comment l'utiliser seul·e ?</strong> Lisez le cas, écrivez une réponse courte à une étape, puis ouvrez les pistes d'analyse. Cochez seulement les éléments réellement présents dans votre réponse. Votre objectif n'est pas d'accumuler des indices : c'est de <strong>justifier les liens</strong> que vous établissez.</p>
+
+  <div class="revision-cas" aria-labelledby="t-revision-cas">
+    <h3 id="t-revision-cas" style="margin-top:0">Cas d'entraînement : « Pourquoi l'eau refroidit-elle différemment ? »</h3>
+    <p class="note-lecture">Situation fictive différente de celle de l'évaluation finale. Les numéros servent à étayer vos réponses.</p>
+    <ol>
+      <li><strong>Intention.</strong> En 5e année, Mme Lavoie veut que les élèves <strong>expliquent, à partir de mesures</strong>, comment différents matériaux influencent le refroidissement de l'eau tiède. Elle annonce comme critères : comparer des résultats, relier une différence observée à un facteur pertinent et justifier l'explication à l'aide de données.</li>
+      <li><strong>Modelage.</strong> Elle active les connaissances des élèves en leur montrant un contenant isolant. Elle présente ensuite deux courbes de température, montre comment lire les axes et verbalise son raisonnement : « Je compare les températures au même moment. Le contenant enveloppé de laine conserve davantage de chaleur. » Elle écrit une explication modèle, que les élèves recopient.</li>
+      <li><strong>Pratiques.</strong> En dyades, les élèves reçoivent de nouvelles données et doivent choisir deux mesures à comparer. Mme Lavoie circule, demande parfois « Quelles données appuient ton idée ? » et corrige immédiatement. Ensuite, chaque élève complète une fiche avec huit questions à choix multiples sur les matériaux et le vocabulaire, puis une phrase à trous qui reprend l'explication du tableau.</li>
+      <li><strong>Retour et évaluation.</strong> La moyenne au questionnaire est de 9/10. Mme Lavoie conclut que les élèves savent expliquer le phénomène. En fin de séquence, les équipes produisent également une affiche illustrant les matériaux utilisés, évaluée selon l'exactitude des noms, la présentation et le soin.</li>
+    </ol>
+  </div>
+
+  <div class="activite" id="act-revision-rapide">
+    <div class="tete"><span aria-hidden="true">✎</span> Vérification rapide avant de rédiger</div>
+    <p class="consigne">Trois décisions à prendre à partir du cas. Chaque choix déclenche une rétroaction explicative : utilisez-les pour préparer vos réponses développées.</p>
+    <div data-quiz="revision"></div>
+  </div>
+
+  <div id="revision-etapes">
+    <div class="revision-etape">
+      <h3>1. Reconnaître et expliquer <span class="etiq p">Famille 1</span></h3>
+      <label class="prompt" for="revision-1">Quelle approche Mme Lavoie met-elle en œuvre ? Appuyez votre identification sur des indices précis et expliquez <em>pourquoi</em> ils correspondent à cette famille.</label>
+      <textarea id="revision-1" data-revision-reponse="1" placeholder="J'observe… Cela correspond à… parce que…"></textarea>
+      <div class="revision-verif"><p>Je vérifie la qualité de ma réponse</p>
+        <label><input type="checkbox"> J'ai reconnu l'approche sans seulement reprendre une étiquette.</label>
+        <label><input type="checkbox"> J'ai choisi des indices précis dans au moins deux moments du cas.</label>
+        <label><input type="checkbox"> J'ai expliqué le lien entre ces indices et les caractéristiques de l'approche.</label>
+      </div>
+      <details><summary>Comparer avec des pistes d'analyse</summary>
+        <p>Le modelage avec verbalisation, la pratique guidée accompagnée de rétroactions et la pratique individuelle évoquent l'enseignement explicite, associé à la famille structurée et directe. Le lien est plus solide si vous expliquez <strong>ce que Mme Lavoie rend visible</strong> et <strong>ce que les élèves doivent ensuite mobiliser</strong>. Nommer trois phases sans montrer leur fonction reste descriptif.</p>
+        <p>Nuance utile : certains gestes sont pertinents, mais la fiche autonome donne déjà une partie de l'explication. Reconnaître l'approche n'oblige pas à juger toute sa mise en œuvre réussie.</p>
+      </details>
+    </div>
+
+    <div class="revision-etape">
+      <h3>2. Mettre en relation théorie, triangle et activité cognitive</h3>
+      <label class="prompt" for="revision-2">Quel courant d'apprentissage éclaire les choix de Mme Lavoie ? À deux moments du cas, quelle relation du triangle de Houssaye paraît privilégiée, et quelle place reste-t-il aux élèves ?</label>
+      <textarea id="revision-2" data-revision-reponse="2" placeholder="Le courant m'aide à comprendre… Au modelage… En pratique guidée…"></textarea>
+      <div class="revision-verif"><p>Je vérifie la qualité de ma réponse</p>
+        <label><input type="checkbox"> J'ai relié le courant à un geste observable, sans en faire une étiquette exclusive.</label>
+        <label><input type="checkbox"> J'ai interprété au moins deux moments à partir des relations du triangle.</label>
+        <label><input type="checkbox"> J'ai expliqué ce que les élèves font intellectuellement, avec une nuance.</label>
+      </div>
+      <details><summary>Comparer avec des pistes d'analyse</summary>
+        <p>Une lecture <strong>cognitiviste</strong> est défendable : le modelage organise l'information et rend visible une opération de comparaison. Une lecture prenant en compte l'<strong>étayage</strong> éclaire les relances de la pratique guidée ; la rétroaction immédiate peut aussi être discutée sous un autre angle.</p>
+        <p>Au modelage, la relation enseignant–savoir peut dominer ; les élèves observent et recopient, mais ne sont pas nécessairement passifs intérieurement. En pratique guidée, Mme Lavoie laisse davantage les élèves traiter les données et les accompagne. <strong>Il ne s'agit pas d'assigner mécaniquement une phase à un axe.</strong> Appuyez toute interprétation sur ce qui se passe réellement.</p>
+      </details>
+    </div>
+
+    <div class="revision-etape">
+      <h3>3. Juger la pertinence avec nuance</h3>
+      <label class="prompt" for="revision-3">Quelle force et quelle limite reconnaissez-vous à cet enseignement explicite au regard de l'intention annoncée ? Quelle condition d'efficacité est respectée ou devrait être mieux assurée ?</label>
+      <textarea id="revision-3" data-revision-reponse="3" placeholder="Cette décision aide les élèves à… En revanche… Il faudrait…"></textarea>
+      <div class="revision-verif"><p>Je vérifie la qualité de ma réponse</p>
+        <label><input type="checkbox"> J'ai reconnu au moins une force réelle, pas seulement des défauts.</label>
+        <label><input type="checkbox"> J'ai lié la limite à l'écart entre activité réelle et apprentissage visé.</label>
+        <label><input type="checkbox"> J'ai discuté une condition d'efficacité et son effet sur l'apprentissage.</label>
+      </div>
+      <details><summary>Comparer avec des pistes d'analyse</summary>
+        <p>Force : le modelage aide les novices à lire des données et à rendre explicite un raisonnement. Les questions de la pratique guidée peuvent conduire l'élève à sélectionner des preuves. Limite : recopier l'explication puis remplir une phrase à trous ne démontre pas l'autonomie dans la justification.</p>
+        <p>Condition à renforcer : vérifier la compréhension à partir d'une <strong>explication que l'élève construit lui-même</strong> avant de conclure que la compétence est maîtrisée. L'enseignement explicite n'est pas « mauvais » : sa pertinence dépend de ce qui est réellement demandé aux élèves.</p>
+      </details>
+    </div>
+
+    <div class="revision-etape">
+      <h3>4. Examiner l'alignement des évaluations</h3>
+      <label class="prompt" for="revision-4">Analysez les deux outils décrits au § 4 (questionnaire et affiche). Que permet réellement de vérifier chacun ? Que ne permettent-ils pas de conclure sur la capacité à expliquer le phénomène ?</label>
+      <textarea id="revision-4" data-revision-reponse="4" placeholder="Le questionnaire renseigne sur… L'affiche renseigne sur… Pour conclure sur l'explication…"></textarea>
+      <div class="revision-verif"><p>Je vérifie la qualité de ma réponse</p>
+        <label><input type="checkbox"> J'ai distingué ce que chaque outil mesure effectivement.</label>
+        <label><input type="checkbox"> J'ai relié ces constats aux critères annoncés au § 1.</label>
+        <label><input type="checkbox"> J'ai évité de confondre une bonne moyenne et une preuve de maîtrise de l'explication.</label>
+      </div>
+      <details><summary>Comparer avec des pistes d'analyse</summary>
+        <p>Le questionnaire peut témoigner de certaines connaissances factuelles ou lexicales ; l'affiche peut montrer une identification correcte des matériaux et un travail soigné. Ce sont des informations utiles, mais <strong>aucun des deux ne recueille directement une explication autonome fondée sur des mesures</strong>.</p>
+        <p>Une trace mieux alignée serait, par exemple, un court raisonnement oral, écrit ou schématisé reliant une observation chiffrée à une conclusion, évalué avec les mêmes critères. On peut alors examiner non seulement la réponse, mais aussi sa justification.</p>
+      </details>
+    </div>
+
+    <div class="revision-etape">
+      <h3>5. Décider d'un ajustement prioritaire</h3>
+      <label class="prompt" for="revision-5">Mme Lavoie ne peut modifier qu'une seule chose. Laquelle choisiriez-vous en priorité ? Justifiez ses effets attendus sur les apprentissages et comparez votre décision à une autre possibilité.</label>
+      <textarea id="revision-5" data-revision-reponse="5" placeholder="Je prioriserais… parce que… Une autre option serait… mais…"></textarea>
+      <div class="revision-verif"><p>Je vérifie la qualité de ma réponse</p>
+        <label><input type="checkbox"> J'ai choisi une priorité claire et réalisable.</label>
+        <label><input type="checkbox"> J'ai justifié mon choix par une activité cognitive et une trace d'apprentissage.</label>
+        <label><input type="checkbox"> Je l'ai comparé à une autre option, sans prétendre qu'il existe une seule bonne décision.</label>
+      </div>
+      <details><summary>Comparer avec des pistes d'analyse</summary>
+        <p>Une priorité défendable serait de remplacer la phrase à trous par une explication autonome appuyée sur de nouvelles mesures. On recueillerait ainsi un indice plus valide de la capacité à expliquer. Une autre priorité pourrait être d'améliorer la vérification de compréhension pendant la pratique guidée, en demandant aux élèves de justifier des données différentes.</p>
+        <p>Une adaptation CUA peut soutenir cette décision : offrir une représentation lisible des courbes et permettre une réponse orale, écrite ou schématisée, tout en exigeant toujours une <strong>relation justifiée entre données et conclusion</strong>. Le critère n'est pas la sophistication du dispositif, mais la cohérence de votre justification.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="carte" aria-labelledby="t-revision-bilan">
+    <h3 id="t-revision-bilan" style="margin-top:0">Mon bilan de révision</h3>
+    <p class="revision-compteur" id="revision-compteur" aria-live="polite">0 critère sur 15 vérifié</p>
+    <p>Une réponse qui <em>repère plusieurs éléments</em> n'est pas nécessairement une analyse aboutie. Cherchez le passage à une <strong>analyse articulée et justifiée</strong> : chaque indice doit contribuer à un raisonnement. Il n'est pas nécessaire de produire une généralisation abstraite pour réussir l'évaluation.</p>
+    <div class="revision-pied">
+      <button class="btn plein" type="button" id="revision-export">Télécharger mes réponses (.txt)</button>
+      <button class="btn" type="button" id="revision-effacer">Effacer mes réponses</button>
+    </div>
+    <p id="revision-message" aria-live="polite"></p>
+    <p class="revision-avertissement">Les réponses restent dans votre navigateur si celui-ci autorise l'enregistrement local. Rien n'est transmis à la professeure. Le téléchargement permet de conserver une copie avant de changer d'appareil.</p>
+  </div>
+  <p class="note-lecture">Ce guide travaille surtout la famille structurée et directe. Les guides des autres familles pourront reprendre ce même parcours : reconnaître, analyser, juger et justifier.</p>
+  <a class="haut" href="#contenu">Retour en haut</a>
+</section>
+
 <!-- ===================== CLÔTURE ===================== -->
 <section id="cloture" aria-labelledby="t-clot">
   <h2 id="t-clot">Aide-mémoire pour planifier et s'autoévaluer</h2>
@@ -968,6 +1109,17 @@ var QUIZ={
      options:["La maîtrise est démontrée : le résultat est correct.","La réponse est une trace utile, mais il faut encore examiner les opérations, leur justification et le réinvestissement.","On ne peut rien conclure tant qu'un examen sommatif n'a pas eu lieu."],ok:1,
      fb:["La bonne réponse ne permet pas à elle seule de savoir si la procédure est comprise, copiée ou obtenue par essais.","On distingue la trace de réussite ponctuelle des manifestations nécessaires à un jugement plus solide sur l'apprentissage.","L'évaluation formative peut fournir des éléments de jugement très utiles, sans attendre un examen sommatif."]}
   ]},
+  revision:{items:[
+    {q:"Quel indice constitue le meilleur appui pour reconnaître une pratique guidée?",
+     options:["La présence de dyades, même si elles recopient un corrigé.","Les élèves sélectionnent des données pendant que l'enseignante relance et ajuste son soutien.","Le fait que les résultats soient affichés à la fin."],ok:1,
+     fb:["Le regroupement ne dit pas à lui seul qui effectue le travail intellectuel. Il faut examiner l'activité et le soutien.","La tâche est réalisée par les élèves, avec rétroaction ciblée et transfert progressif de responsabilité. C'est un indice fort, à interpréter dans le contexte.","Afficher le corrigé ne prouve pas que les élèves ont construit leur démarche."]},
+    {q:"Mme Lavoie peut-elle conclure à la maîtrise de l'explication avec la moyenne de 9/10?",
+     options:["Oui, car la note indique que la plupart ont compris.","Pas entièrement : la moyenne renseigne sur certains acquis, mais pas sur l'explication autonome à partir de données.","Non, car un questionnaire à choix multiples ne renseigne jamais sur rien."],ok:1,
+     fb:["La moyenne concerne les tâches effectivement posées. Ici, elles vérifient surtout le vocabulaire et des faits.","C'est le jugement le plus nuancé : reconnaître ce que l'outil mesure, tout en relevant la compétence qui n'est pas réellement vérifiée.","Un QCM peut fournir des traces utiles ; c'est son alignement avec l'apprentissage visé qui doit être examiné."]},
+    {q:"Comment mobiliser le triangle de Houssaye dans ce cas?",
+     options:["Attribuer définitivement un axe à l'enseignement explicite.","Regarder, à différents moments, quelle relation domine et comment les actions des élèves la modifient.","Choisir l'axe à partir du nom de l'approche sans relire le cas."],ok:1,
+     fb:["Le triangle est une grille de lecture d'une situation, pas une étiquette fixe attachée au modèle.","Cette lecture s'appuie sur les actions observables et permet une interprétation nuancée des déplacements de responsabilité.","Le nom du modèle ne suffit pas : il faut des indices décrivant la relation effective au savoir."]}
+  ]},
   relance:{items:[
     {q:"Un élève s'exclame : « Le glaçon disparaît! »",options:["« Non, il ne disparaît pas, il fond. »","« Exactement, bravo! »","« Est-ce qu'il disparaît vraiment? Qu'est-ce qu'on voit dans l'assiette maintenant? »","« On verra ça plus tard. »"],ok:2,
      fb:["Vous corrigez à la place de l'élève : la conception erronée n'est pas travaillée, et la relation au savoir revient à l'enseignante.","Vous validez une conception erronée sur la conservation de la matière.","Vous relancez à partir de l'observation : l'élève peut lui-même constater que la glace devient de l'eau. C'est le raisonnement qu'on veut développer.","Vous laissez passer une conception erronée qui pourrait s'installer."]},
@@ -1179,6 +1331,59 @@ document.getElementById("telecharger-reflexion").addEventListener("click",functi
   document.body.appendChild(lien);lien.click();lien.remove();
   setTimeout(function(){URL.revokeObjectURL(url);},1500);
   message.innerHTML="<div class='retro ok'><span class='marq'>✓ </span>Votre réflexion a été préparée pour le téléchargement. Conservez ce fichier pour la retravailler.</div>";
+});
+
+/* ---------- Révision autonome : réponses, bilan et export ---------- */
+var revisionChamps=Array.prototype.slice.call(document.querySelectorAll("[data-revision-reponse]"));
+var revisionCases=Array.prototype.slice.call(document.querySelectorAll("#revision-etapes .revision-verif input[type=checkbox]"));
+var revisionCompteur=document.getElementById("revision-compteur");
+var revisionMessage=document.getElementById("revision-message");
+var revisionCle="3pdg260-famille1-revision-v1";
+function revisionEtat(){
+  return {reponses:revisionChamps.map(function(x){return x.value;}),coches:revisionCases.map(function(x){return x.checked;})};
+}
+function revisionBilan(){
+  var n=revisionCases.filter(function(x){return x.checked;}).length;
+  revisionCompteur.textContent=n+" critère(s) sur "+revisionCases.length+" vérifié(s) — ce compteur est un repère de relecture, pas une note.";
+}
+function revisionSauver(){
+  revisionBilan();
+  try{window.localStorage.setItem(revisionCle,JSON.stringify(revisionEtat()));}
+  catch(e){/* Certains navigateurs bloquent le stockage des fichiers locaux : l'export demeure disponible. */}
+}
+try{
+  var revisionMemoire=JSON.parse(window.localStorage.getItem(revisionCle)||"null");
+  if(revisionMemoire){
+    revisionChamps.forEach(function(x,i){x.value=revisionMemoire.reponses&&revisionMemoire.reponses[i]||"";});
+    revisionCases.forEach(function(x,i){x.checked=Boolean(revisionMemoire.coches&&revisionMemoire.coches[i]);});
+  }
+}catch(e){/* L'absence de stockage ne bloque pas la révision. */}
+revisionChamps.forEach(function(x){x.addEventListener("input",revisionSauver);});
+revisionCases.forEach(function(x){x.addEventListener("change",revisionSauver);});
+revisionBilan();
+document.getElementById("revision-export").addEventListener("click",function(){
+  if(!revisionChamps.some(function(x){return x.value.trim().length>0;})){
+    revisionMessage.textContent="Écrivez au moins une réponse avant de télécharger votre révision.";
+    revisionChamps[0].focus();return;
+  }
+  var titres=Array.prototype.slice.call(document.querySelectorAll(".revision-etape h3"));
+  var contenu="3PDG260 — Révision autonome : enseignement explicite\nCas d'entraînement fictif\n\n"+
+    revisionChamps.map(function(champ,i){return titres[i].textContent.trim()+"\n"+(champ.value.trim()||"[À compléter]");}).join("\n\n")+
+    "\n\nBilan : "+revisionCases.filter(function(x){return x.checked;}).length+" critère(s) vérifié(s) sur "+revisionCases.length+".\n";
+  var fichier=new Blob(["\uFEFF"+contenu],{type:"text/plain;charset=utf-8"});
+  var url=URL.createObjectURL(fichier);
+  var lien=document.createElement("a");lien.href=url;lien.download="3PDG260_revision_famille1_mes_reponses.txt";
+  document.body.appendChild(lien);lien.click();lien.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  revisionMessage.textContent="Votre fichier de réponses est prêt. Conservez-le pour poursuivre la révision.";
+});
+document.getElementById("revision-effacer").addEventListener("click",function(){
+  if(!window.confirm("Effacer les réponses et les cases cochées de cet entraînement sur cet appareil?"))return;
+  revisionChamps.forEach(function(x){x.value="";});
+  revisionCases.forEach(function(x){x.checked=false;});
+  revisionSauver();
+  revisionMessage.textContent="L'entraînement a été remis à zéro.";
+  revisionChamps[0].focus();
 });
 
 /* ---------- Menu actif ---------- */
